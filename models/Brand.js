@@ -2,7 +2,7 @@ const conn = require("../configs/dbmysql");
 
 const Brand = {
   getAll: (result) => {
-    conn.query("SELECT * FROM 2122110588_brand", (err, brand, fields) => {
+    conn.query("SELECT * FROM brand", (err, brand, fields) => {
       if (err) {
         result(null);
       } else {
@@ -11,7 +11,7 @@ const Brand = {
     });
   },
   show: (id, result) => {
-    const sql = `SELECT * FROM 2122110588_brand WHERE id='${id}' LIMIT 1`;
+    const sql = `SELECT * FROM brand WHERE id='${id}' LIMIT 1`;
     conn.query(sql, function (err, brand, fields) {
       if (err) {
         result(null);
@@ -21,7 +21,7 @@ const Brand = {
     });
   },
   store: (brand, mycallback) => {
-    var sql = "INSERT INTO 2122110588_brand SET ?";
+    var sql = "INSERT INTO brand SET ?";
     conn.query(sql, brand, function (err, result) {
       if (err) {
         mycallback(err);
@@ -31,7 +31,7 @@ const Brand = {
     });
   },
   edit: (brand, id, mycallback) => {
-    var sql = `UPDATE 2122110588_brand SET ? WHERE id = '${id}'`;
+    var sql = `UPDATE brand SET ? WHERE id = '${id}'`;
     conn.query(sql, brand, function (err, result) {
       if (err) {
         mycallback(err);
@@ -41,7 +41,7 @@ const Brand = {
     });
   },
   delete: (id, mycallback) => {
-    var sql = `DELETE FROM 2122110588_brand WHERE id='${id}'`;
+    var sql = `DELETE FROM brand WHERE id='${id}'`;
     conn.query(sql, function (err, result) {
       if (err) {
         mycallback(err);
@@ -51,7 +51,7 @@ const Brand = {
     });
   },
   getBySlug: async (slug, mycallback) => {
-    const sql = `SELECT * FROM 2122110588_brand WHERE slug='${slug}' LIMIT 1`;
+    const sql = `SELECT * FROM brand WHERE slug='${slug}' LIMIT 1`;
     await conn.query(sql, function (err, category) {
       if (err) {
         mycallback(err);
@@ -61,7 +61,7 @@ const Brand = {
     });
   },
   getListOther: async (sort_order, id, limit, mycallback) => {
-    const sql = `SELECT * FROM 2122110588_brand WHERE sort_order = '${sort_order}' AND status='1' AND id!='${id}'  ORDER BY created_at DESC LIMIT ${limit}`;
+    const sql = `SELECT * FROM brand WHERE sort_order = '${sort_order}' AND status='1' AND id!='${id}'  ORDER BY created_at DESC LIMIT ${limit}`;
     // console.log(sql);
     await conn.query(sql, function (err, categorys) {
       if (err) {

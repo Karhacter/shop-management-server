@@ -3,7 +3,7 @@ const conn = require("../configs/dbmysql");
 const Product = {
   getAll: (result) => {
     conn.query(
-      "SELECT * FROM 2122110588_product",
+      "SELECT * FROM product",
       function (err, product, fields) {
         if (err) {
           result(null);
@@ -14,7 +14,7 @@ const Product = {
     );
   },
   getList: async (limit, offset, mycallback) => {
-    const sql = `SELECT * FROM 2122110588_product WHERE status='1' ORDER BY created_at DESC LIMIT ${limit} OFFSET ${offset}`;
+    const sql = `SELECT * FROM product WHERE status='1' ORDER BY created_at DESC LIMIT ${limit} OFFSET ${offset}`;
     await conn.query(sql, function (err, products) {
       if (err) {
         mycallback(null);
@@ -25,7 +25,7 @@ const Product = {
   },
 
   show: (id, result) => {
-    const sql = `SELECT * FROM 2122110588_product WHERE id='${id}' LIMIT 1`;
+    const sql = `SELECT * FROM product WHERE id='${id}' LIMIT 1`;
     conn.query(sql, function (err, product, fields) {
       if (err) {
         result(null);
@@ -35,7 +35,7 @@ const Product = {
     });
   },
   store: (product, mycallback) => {
-    var sql = "INSERT INTO 2122110588_product SET ?";
+    var sql = "INSERT INTO product SET ?";
     conn.query(sql, product, function (err, result) {
       if (err) {
         mycallback(err);
@@ -45,7 +45,7 @@ const Product = {
     });
   },
   edit: (product, id, mycallback) => {
-    var sql = `UPDATE 2122110588_product SET ? WHERE id = '${id}'`;
+    var sql = `UPDATE product SET ? WHERE id = '${id}'`;
     conn.query(sql, product, function (err, result) {
       if (err) {
         mycallback(err);
@@ -55,7 +55,7 @@ const Product = {
     });
   },
   remove: (id, mycallback) => {
-    var sql = `DELETE FROM 2122110588_product WHERE id='${id}'`;
+    var sql = `DELETE FROM product WHERE id='${id}'`;
     conn.query(sql, function (err, result) {
       if (err) {
         mycallback(err);
@@ -65,7 +65,7 @@ const Product = {
     });
   },
   getListNew: (limit, mycallback) => {
-    const sql = `SELECT * FROM 2122110588_product WHERE status='1' ORDER BY created_at DESC LIMIT ${limit}`;
+    const sql = `SELECT * FROM product WHERE status='1' ORDER BY created_at DESC LIMIT ${limit}`;
     conn.query(sql, function (err, products) {
       if (err) {
         mycallback(null);
@@ -75,7 +75,7 @@ const Product = {
     });
   },
   getListByCategory: (categoryid, limit, mycallback) => {
-    const sql = `SELECT * FROM 2122110588_product WHERE category_id ='${categoryid}' AND status='1' LIMIT ${limit}`;
+    const sql = `SELECT * FROM product WHERE category_id ='${categoryid}' AND status='1' LIMIT ${limit}`;
     conn.query(sql, function (err, products) {
       if (err) {
         mycallback(null);
@@ -85,7 +85,7 @@ const Product = {
     });
   },
   getListByBrand: (brandid, limit, mycallback) => {
-    const sql = `SELECT * FROM 2122110588_product WHERE brand_id ='${brandid}' AND status='1' LIMIT ${limit}`;
+    const sql = `SELECT * FROM product WHERE brand_id ='${brandid}' AND status='1' LIMIT ${limit}`;
     conn.query(sql, function (err, products) {
       if (err) {
         mycallback(null);
@@ -95,7 +95,7 @@ const Product = {
     });
   },
   getListProductCategory: async (categoryid, limit, offset, mycallback) => {
-    const sql = `SELECT * FROM 2122110588_product WHERE status='1' AND category_id='${categoryid}' ORDER BY created_at DESC LIMIT ${limit} OFFSET ${offset}`;
+    const sql = `SELECT * FROM product WHERE status='1' AND category_id='${categoryid}' ORDER BY created_at DESC LIMIT ${limit} OFFSET ${offset}`;
     await conn.query(sql, function (err, products) {
       if (err) {
         mycallback(null);
@@ -105,7 +105,7 @@ const Product = {
     });
   },
   getBySlug: async (slug, mycallback) => {
-    const sql = `SELECT * FROM 2122110588_product WHERE slug='${slug}'`;
+    const sql = `SELECT * FROM product WHERE slug='${slug}'`;
     await conn.query(sql, function (err, product) {
       if (err) {
         mycallback(err);
@@ -115,7 +115,7 @@ const Product = {
     });
   },
   getListProductOther: async (categoryid, id, limit, mycallback) => {
-    const sql = `SELECT * FROM 2122110588_product WHERE category_id = '${categoryid}' AND status='1' AND id!='${id}'  ORDER BY created_at DESC LIMIT ${limit}`;
+    const sql = `SELECT * FROM product WHERE category_id = '${categoryid}' AND status='1' AND id!='${id}'  ORDER BY created_at DESC LIMIT ${limit}`;
     // console.log(sql);
     await conn.query(sql, function (err, products) {
       if (err) {

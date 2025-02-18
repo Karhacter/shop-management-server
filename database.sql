@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `2122110588_banner`
+-- Table structure for table `banner`
 --
 
-CREATE TABLE `2122110588_banner` (
+CREATE TABLE `banner` (
   `id` int UNSIGNED NOT NULL,
   `name` varchar(1000) COLLATE utf8mb3_unicode_ci NOT NULL,
   `link` varchar(1000) COLLATE utf8mb3_unicode_ci NOT NULL,
@@ -43,10 +43,10 @@ CREATE TABLE `2122110588_banner` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
--- Dumping data for table `2122110588_banner`
+-- Dumping data for table `banner`
 --
 
-INSERT INTO `2122110588_banner` (`id`, `name`, `link`, `sort_order`, `description`, `position`, `image`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`) VALUES
+INSERT INTO `banner` (`id`, `name`, `link`, `sort_order`, `description`, `position`, `image`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`) VALUES
 (1, 'Sách mới năm 2024', 'http://localhost:5000/assets/images/sliders/slide_1.jpg', 1, NULL, 'slideshow', 'slide_1.jpg', '2024-01-02 14:07:40', 1, '2024-05-02 05:58:17', 1, 1),
 (2, 'Sách tái bản 2024', 'http://localhost:5000/assets/images/sliders/slide_2.jpg', 2, NULL, 'slideshow', 'slide_2.jpg', '2024-01-02 15:39:03', 1, NULL, 1, 1),
 (3, 'Sách hay đón hè', 'http://localhost:5000/assets/images/sliders/slide_3.jpg', 3, NULL, 'slideshow', 'slide_3.jpg', '2024-01-02 15:42:30', 1, NULL, 1, 1),
@@ -55,10 +55,10 @@ INSERT INTO `2122110588_banner` (`id`, `name`, `link`, `sort_order`, `descriptio
 -- --------------------------------------------------------
 
 --
--- Table structure for table `2122110588_brand`
+-- Table structure for table `brand`
 --
 
-CREATE TABLE `2122110588_brand` (
+CREATE TABLE `brand` (
   `id` int UNSIGNED NOT NULL,
   `name` varchar(1000) COLLATE utf8mb3_unicode_ci NOT NULL COMMENT 'Not Null',
   `slug` varchar(1000) COLLATE utf8mb3_unicode_ci NOT NULL COMMENT 'Not Null',
@@ -73,10 +73,10 @@ CREATE TABLE `2122110588_brand` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
--- Dumping data for table `2122110588_brand`
+-- Dumping data for table `brand`
 --
 
-INSERT INTO `2122110588_brand` (`id`, `name`, `slug`, `image`, `sort_order`, `description`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`) VALUES
+INSERT INTO `brand` (`id`, `name`, `slug`, `image`, `sort_order`, `description`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`) VALUES
 (1, 'Kim đồng', 'kim-dong', 'kim-dong.png', 1, 'Nhà xuất bản kim đồng', '2023-12-29 12:10:29', 1, '2024-01-05 09:56:29', 1, 1),
 (2, 'Alpha Books', 'alpha-books', 'Alpha-Books.png', 2, 'Nhà xuất bản Alpha Books', '2024-01-04 15:31:04', 1, '2024-01-05 09:56:30', 1, 1),
 (3, 'Trẻ', 'tre', 'tre.png', 3, 'Nhà xuất bản Trẻ', '2024-01-04 15:32:25', 1, '2024-01-05 09:56:32', 1, 1),
@@ -91,10 +91,10 @@ INSERT INTO `2122110588_brand` (`id`, `name`, `slug`, `image`, `sort_order`, `de
 -- --------------------------------------------------------
 
 --
--- Table structure for table `2122110588_category`
+-- Table structure for table `category`
 --
 
-CREATE TABLE `2122110588_category` (
+CREATE TABLE `category` (
   `id` int UNSIGNED NOT NULL COMMENT 'AUTO_INCREMENT',
   `name` varchar(1000) COLLATE utf8mb3_unicode_ci NOT NULL,
   `slug` varchar(1000) COLLATE utf8mb3_unicode_ci NOT NULL,
@@ -110,10 +110,10 @@ CREATE TABLE `2122110588_category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
--- Dumping data for table `2122110588_category`
+-- Dumping data for table `category`
 --
 
-INSERT INTO `2122110588_category` (`id`, `name`, `slug`, `image`, `parent_id`, `sort_order`, `description`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`) VALUES
+INSERT INTO `category` (`id`, `name`, `slug`, `image`, `parent_id`, `sort_order`, `description`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`) VALUES
 (1, 'Tiểu thuyết', 'tieu-thuyet', 'tieu-thuyet.png', 0, NULL, 'Tiểu thuyết', '2024-01-02 16:13:04', 1, '2024-01-14 14:21:09', 1, 1),
 (2, 'Tâm lý', 'tam-ly', 'tam-ly.png', 0, NULL, 'Thể loại tâm lý', '2024-01-02 16:16:22', 1, '2024-01-15 03:45:27', 1, 1),
 (3, 'Kinh tế', 'kinh-te', 'kinh-te.png', 0, NULL, 'Kinh tế', '2024-01-02 16:21:41', 1, '2024-01-15 03:45:29', 1, 1),
@@ -127,10 +127,10 @@ INSERT INTO `2122110588_category` (`id`, `name`, `slug`, `image`, `parent_id`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `2122110588_contact`
+-- Table structure for table `contact`
 --
 
-CREATE TABLE `2122110588_contact` (
+CREATE TABLE `contact` (
   `id` int UNSIGNED NOT NULL,
   `user_id` int UNSIGNED DEFAULT NULL,
   `name` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
@@ -147,10 +147,10 @@ CREATE TABLE `2122110588_contact` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
--- Dumping data for table `2122110588_contact`
+-- Dumping data for table `contact`
 --
 
-INSERT INTO `2122110588_contact` (`id`, `user_id`, `name`, `email`, `phone`, `title`, `content`, `reply_id`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`) VALUES
+INSERT INTO `contact` (`id`, `user_id`, `name`, `email`, `phone`, `title`, `content`, `reply_id`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`) VALUES
 (1, 0, 'Nguyễn Văn Toàn', 'nguyenvantoan@gmail.com', '0987654321', 'Hỏi về liên kết mua sĩ', 'Hỏi về liên kết mua sĩ', 0, '2024-03-29 08:08:19', 0, '2024-03-29 15:08:19', 1, 2),
 (2, 0, 'Lê Thái Sơn', 'lethaison@gmail.com', '0987667986', 'Hỏi về liên kết mua sĩ', 'Hỏi về liên kết mua sĩ', 0, '2024-03-29 08:08:19', 0, '2024-03-29 15:08:19', 1, 2),
 (5, NULL, 'Thế giới', 'khanhduc392@gmail.com', '0378173109', 'asd', 'asd', 0, '2024-05-02 14:25:21', 1, '2024-05-02 14:25:21', NULL, 1),
@@ -159,10 +159,10 @@ INSERT INTO `2122110588_contact` (`id`, `user_id`, `name`, `email`, `phone`, `ti
 -- --------------------------------------------------------
 
 --
--- Table structure for table `2122110588_menu`
+-- Table structure for table `menu`
 --
 
-CREATE TABLE `2122110588_menu` (
+CREATE TABLE `menu` (
   `id` int NOT NULL,
   `name` varchar(1000) COLLATE utf8mb3_unicode_ci NOT NULL,
   `link` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
@@ -179,10 +179,10 @@ CREATE TABLE `2122110588_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
--- Dumping data for table `2122110588_menu`
+-- Dumping data for table `menu`
 --
 
-INSERT INTO `2122110588_menu` (`id`, `name`, `link`, `table_id`, `sort_order`, `position`, `type`, `parent_id`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`) VALUES
+INSERT INTO `menu` (`id`, `name`, `link`, `table_id`, `sort_order`, `position`, `type`, `parent_id`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`) VALUES
 (1, 'Trang chủ', 'http://localhost/Litenary_Oasis/index.php', 0, 2, 'mainmenu', 'custom', 0, '2024-01-12 12:11:21', 1, NULL, 1, 1),
 (2, 'Giới thiệu', 'http://localhost/Litenary_Oasis/index.php?opt=page&cat=gioi-thieu', 39, 2, 'mainmenu', 'page', 0, '2024-01-12 12:15:16', 1, NULL, 1, 1),
 (3, 'Bài viết', 'http://localhost/Litenary_Oasis/index.php?opt=post_topic', 40, 6, 'mainmenu', 'page', 0, '2024-01-12 14:56:55', 1, NULL, 1, 1),
@@ -207,10 +207,10 @@ INSERT INTO `2122110588_menu` (`id`, `name`, `link`, `table_id`, `sort_order`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `2122110588_order`
+-- Table structure for table `order`
 --
 
-CREATE TABLE `2122110588_order` (
+CREATE TABLE `order` (
   `id` int UNSIGNED NOT NULL,
   `user_id` int UNSIGNED NOT NULL,
   `deliveryname` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
@@ -225,10 +225,10 @@ CREATE TABLE `2122110588_order` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
--- Dumping data for table `2122110588_order`
+-- Dumping data for table `order`
 --
 
-INSERT INTO `2122110588_order` (`id`, `user_id`, `deliveryname`, `deliveryphone`, `deliveryemail`, `deliveryaddress`, `note`, `created_at`, `updated_at`, `updated_by`, `status`) VALUES
+INSERT INTO `order` (`id`, `user_id`, `deliveryname`, `deliveryphone`, `deliveryemail`, `deliveryaddress`, `note`, `created_at`, `updated_at`, `updated_by`, `status`) VALUES
 (48, 1, 'Trần Đức Khánh ', '01000004', 'karhacter@gmail.com', '8 Dương văn cam', 'Không chú ý', '2024-05-03 17:17:51', '2024-05-03 17:17:51', NULL, 1),
 (49, 1, 'Trần Đức Khánh ', '01000004', 'karhacter@gmail.com', '8 Dương văn cam', 'Không chú ý', '2024-05-03 17:18:51', '2024-05-03 17:18:52', NULL, 1),
 (50, 1, 'Trần Đức Khánh ', '01000004', 'karhacter@gmail.com', '8 Dương văn cam', 'Không chú ý', '2024-05-03 17:19:05', '2024-05-03 17:19:05', NULL, 1),
@@ -281,10 +281,10 @@ INSERT INTO `2122110588_order` (`id`, `user_id`, `deliveryname`, `deliveryphone`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `2122110588_orderdetail`
+-- Table structure for table `orderdetail`
 --
 
-CREATE TABLE `2122110588_orderdetail` (
+CREATE TABLE `orderdetail` (
   `id` int NOT NULL,
   `order_id` int UNSIGNED NOT NULL,
   `product_id` int UNSIGNED NOT NULL,
@@ -296,10 +296,10 @@ CREATE TABLE `2122110588_orderdetail` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
--- Dumping data for table `2122110588_orderdetail`
+-- Dumping data for table `orderdetail`
 --
 
-INSERT INTO `2122110588_orderdetail` (`id`, `order_id`, `product_id`, `price`, `qty`, `amount`, `created_at`, `updated_at`) VALUES
+INSERT INTO `orderdetail` (`id`, `order_id`, `product_id`, `price`, `qty`, `amount`, `created_at`, `updated_at`) VALUES
 (21, 48, 52, 76000, 1, 76000, '2024-05-03 17:17:51', '2024-05-03 17:17:51'),
 (22, 49, 51, 135000, 1, 135000, '2024-05-03 17:18:52', '2024-05-03 17:18:52'),
 (23, 50, 50, 119000, 1, 119000, '2024-05-03 17:19:05', '2024-05-03 17:19:05'),
@@ -353,10 +353,10 @@ INSERT INTO `2122110588_orderdetail` (`id`, `order_id`, `product_id`, `price`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `2122110588_post`
+-- Table structure for table `post`
 --
 
-CREATE TABLE `2122110588_post` (
+CREATE TABLE `post` (
   `id` int UNSIGNED NOT NULL,
   `topic_id` int UNSIGNED DEFAULT NULL,
   `title` varchar(1000) COLLATE utf8mb3_unicode_ci NOT NULL,
@@ -373,11 +373,11 @@ CREATE TABLE `2122110588_post` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
--- Dumping data for table `2122110588_post`
+-- Dumping data for table `post`
 --
 
-INSERT INTO `2122110588_post` (`id`, `topic_id`, `title`, `slug`, `detail`, `image`, `type`, `description`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`) VALUES
-(1, NULL, 'CHÍNH SÁCH BẢO HÀNH', 'chinh-sach-bao-hanh', '<p><strong>1. Tôi có thể bảo hành sản phẩm tại đâu?</strong></p>\n<p>- Bảo hành chính hãng: Đối với các sản phẩm điện tử, đồ chơi điện tử,...\ncó tem phiếu cam kết bảo hành từ Hãng, khách hàng có thể\nmang sản phẩm đến trực tiếp Hãng để bảo hành mà không cần thông qua\n<strong></strong><strong>.</strong></p>\n<p>- Bảo hành thông qua : khách hàng liên hotline\n<strong>0378173109</strong> hoặc truy cập <a\n    href=\"http://localhost/TranDucKhanh_2122110588_PHP/index.php?opt=page&cat=chinh-sach-bao-hanh\"><strong>www./chinh-sach-bao-hanh-san-pham</strong></a>\nđể được hỗ trợ tư vấn về thực hiện bảo hành.</p>\n<p><strong>2. Tôi có thể được bảo hành sản phẩm miễn phí\n    không?</strong></p>\n<p>Sản phẩm của quý khách được bảo hành miễn phí chính hãng\nkhi:</p>\n<ul>\n<li>\n    <p>Còn thời hạn bảo hành (dựa trên tem/phiếu bảo hành hoặc thời điểm\n        kích hoạt bảo hành điện tử).</p>\n</li>\n<li>\n    <p>Tem/phiếu bảo hành còn nguyên vẹn.</p>\n</li>\n<li>\n    <p>Sản phẩm bị lỗi kỹ thuật.</p>\n</li>\n</ul>\n<p>Các trường hợp có thể phát sinh phí bảo hành:</p>\n<ul>\n<li>\n    <p>Sản phẩm hết thời hạn bảo hành.</p>\n</li>\n<li>\n    <p>Sản phẩm bị bể, biến dạng, cháy, nổ, ẩm thấp trong động cơ hoặc hư hỏng trong\n        quá trình sử dụng.</p>\n</li>\n<li>\n    <p>Sản phẩm bị hư hỏng do lỗi của người sử dụng, không xuất phát từ lỗi vốn\n        có của hàng hóa.</p>\n</li>\n</ul>\n<p><strong>3. Sau bao lâu tôi có thể nhận lại sản phẩm bảo hành?</strong></p>\n<p>Nếu sản phẩm của quý khách vẫn còn trong thời hạn bảo hành trên\nteam phiếu bảo hành của Hãng, Fahasa khuyến khích quý khách gửi\ntrực tiếp đến trung tâm của Hãng để được hỗ trợ bảo hành trong thời gian nhanh\nnhất.</p>\n<p>Trường hợp quý khách gửi hàng về , thời gian bảo hành dự kiến\ntrong vòng 21- 45 ngày tùy thuộc vào điều kiện sẵn có của linh\nkiện thay thế từ nhà sản xuất/lỗi sản phẩm (không tính thời gian vận chuyển đi\nvà về). Đối với sản phẩm<a style=\"background-color: #ffffff;\" name=\"_GoBack\"></a></p>\n<p><strong>4. </strong><strong></strong><strong> bảo hành bằng các hình\n    thức nào?</strong></p>\n<p>Sản phẩm tại <strong></strong> sẽ được bảo hành bằng 1 trong 4 hình thức sau:\n</p>\n<ul>\n<li>\n    <p>Hóa đơn: khách hàng mang theo hóa đơn trực tiếp hoặc hóa\n        đơn giá trị gia tăng có thông tin của sản phẩm để được bảo hành.\n    </p>\n</li>\n<li>\n    <p>Phiếu bảo hành: đi kèm theo sản phẩm, có đầy đủ thông tin về nơi\n        bảo hành và điều kiện bảo hành.</p>\n</li>\n<li>\n    <p>Tem bảo hành: loại tem đặc biệt chỉ sử dụng một lần, được dán trực tiếp\n        lên sản phẩm. Sản phẩm còn trong thời hạn bảo hành phải thỏa điều kiện\n        tem còn nguyên vẹn và thời gian bảo hành phải trước ngày\n        được viết trên tem.</p>\n</li>\n<li>\n    <p>Điện tử: là chế độ bảo hành sản phẩm trực tuyến thay thế cho phương pháp\n        bảo hành thông thường bằng giấy hay thẻ bảo hành bằng cách: nhắn\n        tin SMS kích hoạt, quét mã QR-Code từ tem nhãn, đăng ký\n        trên website hoặc bằng ứng dụng bảo hành.</p>\n</li>\n</ul>\n<p><strong>5. </strong><strong></strong><strong> có bảo hành quà tặng\n    kèm sản phẩm không?</strong></p>\n<p><strong></strong> rất tiếc hiện chưa hỗ trợ bảo hành quà tặng đi kèm\nsản phẩm chính. </p>\n<p><strong>Lưu ý:</strong> Để đảm bảo quyền lợi khách hàng và\n<strong></strong> có cơ sở làm việc với các bộ phận liên quan,\ntất cả yêu cầu bảo hành quý khách cần cung cấp hình ảnh/clip sản\nphẩm lỗi. <strong></strong> xin phép từ chối khi chưa nhận đủ thông tin\nhình ảnh từ quý khách. </p>\n\n', 'chinh-sach-bao-hanh.png', 'page', 'Chính sách bảo hành', '2024-01-12 04:54:56', 0, '2024-01-27 02:35:31', 1, 1),
+INSERT INTO `post` (`id`, `topic_id`, `title`, `slug`, `detail`, `image`, `type`, `description`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`) VALUES
+(1, NULL, 'CHÍNH SÁCH BẢO HÀNH', 'chinh-sach-bao-hanh', '<p><strong>1. Tôi có thể bảo hành sản phẩm tại đâu?</strong></p>\n<p>- Bảo hành chính hãng: Đối với các sản phẩm điện tử, đồ chơi điện tử,...\ncó tem phiếu cam kết bảo hành từ Hãng, khách hàng có thể\nmang sản phẩm đến trực tiếp Hãng để bảo hành mà không cần thông qua\n<strong></strong><strong>.</strong></p>\n<p>- Bảo hành thông qua : khách hàng liên hotline\n<strong>0378173109</strong> hoặc truy cập <a\n    href=\"http://localhost/TranDucKhanh_PHP/index.php?opt=page&cat=chinh-sach-bao-hanh\"><strong>www./chinh-sach-bao-hanh-san-pham</strong></a>\nđể được hỗ trợ tư vấn về thực hiện bảo hành.</p>\n<p><strong>2. Tôi có thể được bảo hành sản phẩm miễn phí\n    không?</strong></p>\n<p>Sản phẩm của quý khách được bảo hành miễn phí chính hãng\nkhi:</p>\n<ul>\n<li>\n    <p>Còn thời hạn bảo hành (dựa trên tem/phiếu bảo hành hoặc thời điểm\n        kích hoạt bảo hành điện tử).</p>\n</li>\n<li>\n    <p>Tem/phiếu bảo hành còn nguyên vẹn.</p>\n</li>\n<li>\n    <p>Sản phẩm bị lỗi kỹ thuật.</p>\n</li>\n</ul>\n<p>Các trường hợp có thể phát sinh phí bảo hành:</p>\n<ul>\n<li>\n    <p>Sản phẩm hết thời hạn bảo hành.</p>\n</li>\n<li>\n    <p>Sản phẩm bị bể, biến dạng, cháy, nổ, ẩm thấp trong động cơ hoặc hư hỏng trong\n        quá trình sử dụng.</p>\n</li>\n<li>\n    <p>Sản phẩm bị hư hỏng do lỗi của người sử dụng, không xuất phát từ lỗi vốn\n        có của hàng hóa.</p>\n</li>\n</ul>\n<p><strong>3. Sau bao lâu tôi có thể nhận lại sản phẩm bảo hành?</strong></p>\n<p>Nếu sản phẩm của quý khách vẫn còn trong thời hạn bảo hành trên\nteam phiếu bảo hành của Hãng, Fahasa khuyến khích quý khách gửi\ntrực tiếp đến trung tâm của Hãng để được hỗ trợ bảo hành trong thời gian nhanh\nnhất.</p>\n<p>Trường hợp quý khách gửi hàng về , thời gian bảo hành dự kiến\ntrong vòng 21- 45 ngày tùy thuộc vào điều kiện sẵn có của linh\nkiện thay thế từ nhà sản xuất/lỗi sản phẩm (không tính thời gian vận chuyển đi\nvà về). Đối với sản phẩm<a style=\"background-color: #ffffff;\" name=\"_GoBack\"></a></p>\n<p><strong>4. </strong><strong></strong><strong> bảo hành bằng các hình\n    thức nào?</strong></p>\n<p>Sản phẩm tại <strong></strong> sẽ được bảo hành bằng 1 trong 4 hình thức sau:\n</p>\n<ul>\n<li>\n    <p>Hóa đơn: khách hàng mang theo hóa đơn trực tiếp hoặc hóa\n        đơn giá trị gia tăng có thông tin của sản phẩm để được bảo hành.\n    </p>\n</li>\n<li>\n    <p>Phiếu bảo hành: đi kèm theo sản phẩm, có đầy đủ thông tin về nơi\n        bảo hành và điều kiện bảo hành.</p>\n</li>\n<li>\n    <p>Tem bảo hành: loại tem đặc biệt chỉ sử dụng một lần, được dán trực tiếp\n        lên sản phẩm. Sản phẩm còn trong thời hạn bảo hành phải thỏa điều kiện\n        tem còn nguyên vẹn và thời gian bảo hành phải trước ngày\n        được viết trên tem.</p>\n</li>\n<li>\n    <p>Điện tử: là chế độ bảo hành sản phẩm trực tuyến thay thế cho phương pháp\n        bảo hành thông thường bằng giấy hay thẻ bảo hành bằng cách: nhắn\n        tin SMS kích hoạt, quét mã QR-Code từ tem nhãn, đăng ký\n        trên website hoặc bằng ứng dụng bảo hành.</p>\n</li>\n</ul>\n<p><strong>5. </strong><strong></strong><strong> có bảo hành quà tặng\n    kèm sản phẩm không?</strong></p>\n<p><strong></strong> rất tiếc hiện chưa hỗ trợ bảo hành quà tặng đi kèm\nsản phẩm chính. </p>\n<p><strong>Lưu ý:</strong> Để đảm bảo quyền lợi khách hàng và\n<strong></strong> có cơ sở làm việc với các bộ phận liên quan,\ntất cả yêu cầu bảo hành quý khách cần cung cấp hình ảnh/clip sản\nphẩm lỗi. <strong></strong> xin phép từ chối khi chưa nhận đủ thông tin\nhình ảnh từ quý khách. </p>\n\n', 'chinh-sach-bao-hanh.png', 'page', 'Chính sách bảo hành', '2024-01-12 04:54:56', 0, '2024-01-27 02:35:31', 1, 1),
 (2, NULL, 'CHÍNH SÁCH MUA HÀNG', 'chinh-sach-hoan-tien', '<p><span style=\"font-size: medium;\">Hiện nay, do mức chiết khấu trên  rất cao, đặc biệt vào các thời điểm chạy chương trình. Do đó đối với mỗi chương trình số lượng sản phẩm giảm sốc có giới hạn nhất định, vì vậy để đảm bảo quyền lợi của từng khách hàng, chúng tôi xin thông báo tiêu chí xét “Đơn Hàng Sỉ” và chính sách như sau:</span></p>\n                        <br /><span style=\"font-size: medium;\"> <strong>1. </strong>Đơn hàng được gọi là “đơn hàng sỉ” khi đơn hàng có giá trị: từ <strong>3.000.000</strong> đồng (Ba triệu đồng) trở lên.</span><br />\n                  \n                        <ul>\n                                                   </ul>\n                        <span style=\"font-size: medium;\"> <strong>2. </strong>Ch&iacute;nh s&aacute;ch gi&aacute; (% chiết khấu giảm gi&aacute;). Đ&acirc;y l&agrave; ch&iacute;nh s&aacute;ch chung chỉ mang t&iacute;nh tương đối. Xin qu&yacute; kh&aacute;ch vui l&ograve;ng li&ecirc;n lạc với Fahasa để c&oacute; ch&iacute;nh s&aacute;ch gi&aacute; ch&iacute;nh x&aacute;c nhất: </span><br />\n                        <ul>\n                           <li><span style=\"font-size: medium;\">- Đối với Nh&oacute;m h&agrave;ng s&aacute;ch <strong>kinh tế, <strong><strong>Văn học</strong></strong>: </strong>&aacute;p dụng mức giảm gi&aacute; tr&ecirc;n web tối đa kh&ocirc;ng vượt qu&aacute; 30%.</span></li>\n                        </ul>\n                        <ul>\n                           <li><span style=\"font-size: medium;\">- Đối với Nh&oacute;m h&agrave;ng s&aacute;ch <strong>thiếu nhi v&agrave; t&acirc;m l&yacute; kỹ năng: </strong>&aacute;p dụng mức giảm gi&aacute; tr&ecirc;n web tối đa kh&ocirc;ng vượt qu&aacute; 20%.</span></li>\n                        </ul>\n                        <ul>\n                           <li><span style=\"font-size: medium;\">- Đối với Nh&oacute;m h&agrave;ng s&aacute;ch <strong>từ điển v&agrave; s&aacute;ch ngoại văn : </strong>&aacute;p dụng mức giảm gi&aacute; tr&ecirc;n web tối đa kh&ocirc;ng vượt qu&aacute; 10%.</span></li>\n                        </ul>\n                        <ul>\n                           <li><span style=\"font-size: medium;\">- Đối với Nh&oacute;m h&agrave;ng <strong>văn ph&ograve;ng phẩm, đồ chơi, dụng cụ học sinh</strong>: &aacute;p dụng mức giảm gi&aacute; tr&ecirc;n web tối đa kh&ocirc;ng vượt qu&aacute; 15%.</span></li>\n                        </ul>\n                        <ul>\n                           <li><span style=\"font-size: medium;\">- Đối với Nh&oacute;m h&agrave;ng <strong>giấy photo, sản phẩm điện tử, văn h&oacute;a phẩm</strong>: &aacute;p dụng mức giảm gi&aacute; tr&ecirc;n web tối đa kh&ocirc;ng vượt qu&aacute; 5%.</span></li>\n                        </ul>\n                        <br /><span style=\"font-size: medium;\"> Qu&yacute; kh&aacute;ch c&oacute; nhu cầu mua sỉ, vui l&ograve;ng li&ecirc;n hệ phòng kinh doanh : 1900 63 64 67 hoặc Email: <a href=\"mailto:sales@.vn\">sales@.vn</a>.</span>', 'chinh-sach-hoan-tien.jpg', 'page', 'Chính Sách Hoàn Tiền', '2024-01-12 04:56:03', 0, '2024-01-27 02:12:59', 1, 1),
 (3, NULL, 'CHÍNH SÁCH ĐỔI HÀNG', 'chinh-sach-doi-hang', '\n				<p>Ch&uacute;ng t&ocirc;i lu&ocirc;n tr&acirc;n trọng sự tin tưởng v&agrave; ủng hộ của qu&yacute; kh&aacute;ch h&agrave;ng khi trải nghiệm mua h&agrave;ng tại <a href=\"http://www./\"><strong></strong></a>. Do đ&oacute; ch&uacute;ng t&ocirc;i lu&ocirc;n cố gắng ho&agrave;n thiện dịch vụ tốt nhất để phục vụ mọi nhu cầu mua sắm của qu&yacute; kh&aacute;ch.</p>\n				<p><a href=\"http://www./\"><strong></strong></a> ch&uacute;ng t&ocirc;i lu&ocirc;n lu&ocirc;n cam kết tất cả c&aacute;c sản phẩm b&aacute;n tại <a href=\"http://www./\"><strong></strong></a> 100% l&agrave; những sản phẩm chất lượng v&agrave; xuất xứ nguồn gốc r&otilde; r&agrave;ng, hợp ph&aacute;p cũng như an to&agrave;n cho người ti&ecirc;u d&ugrave;ng. Để việc mua sắm của qu&yacute; kh&aacute;ch tại <a href=\"http://www./\"><strong></strong></a> l&agrave; trải nghiệm dịch vụ th&acirc;n thiện, ch&uacute;ng t&ocirc;i hy vọng qu&yacute; kh&aacute;ch sẽ kiểm tra kỹ c&aacute;c nội dung sau trước khi nhận h&agrave;ng:&nbsp;</p>\n				<ul>\n					<li>\n						<p>Th&ocirc;ng tin sản phẩm: t&ecirc;n sản phẩm v&agrave; chất lượng sản phẩm.</p>\n					</li>\n					<li>\n						<p>Số lượng sản phẩm.</p>\n					</li>\n					<li>\n					</li>\n				</ul>\n				<p>Trong trường hợp hiếm hoi sản phẩm qu&yacute; kh&aacute;ch nhận được c&oacute; khiếm khuyết, hư hỏng hoặc kh&ocirc;ng như m&ocirc; tả,  cam kết bảo vệ kh&aacute;ch h&agrave;ng bằng ch&iacute;nh s&aacute;ch đổi trả/ ho&agrave;n tiền tr&ecirc;n tinh thần bảo vệ quyền lợi người ti&ecirc;u d&ugrave;ng nhằm cam kết với qu&yacute; kh&aacute;ch về chất lượng sản phẩm v&agrave; dịch vụ của ch&uacute;ng t&ocirc;i.</p>\n				<p>Khi qu&yacute; kh&aacute;ch h&agrave;ng c&oacute; h&agrave;ng h&oacute;a mua tại <a href=\"http://www./\"><strong></strong></a>cần đổi/ trả/bảo h&agrave;nh/ho&agrave;n tiền, xin qu&yacute; kh&aacute;ch h&agrave;ng li&ecirc;n hệ với ch&uacute;ng t&ocirc;i qua hotline <strong>0378173109</strong> hoặc truy cập <a href=\"http://www./chinh-sach-doi-tra-hang\"><strong>/chinh-sach-doi-tra-hang</strong></a> để t&igrave;m hiểu th&ecirc;m về ch&iacute;nh s&aacute;ch đổi/trả:<a style=\"background-color: #ffffff;\" name=\"_GoBack\"></a></p>\n				<strong>1. Thời gian &aacute;p dụng đổi/trả</strong><br />\n				<table style=\"width: 772px;\" cellspacing=\"1\" cellpadding=\"1\">\n					<tbody>\n						<tr>\n							<td>\n								<p>&nbsp;</p>\n							</td>\n							<td>\n								<p><strong>KỂ TỪ KHI </strong><strong> </strong><strong>GIAO H&Agrave;NG TH&Agrave;NH C&Ocirc;NG</strong></p>\n							</td>\n							<td>\n								<p><strong>SẢN PHẨM LỖI<br /> (do nh&agrave; cung cấp)</strong></p>\n							</td>\n							<td>\n								<p><strong>SẢN PHẨM KH&Ocirc;NG LỖI&nbsp;(*)</strong></p>\n							</td>\n							<td>\n								<p><strong>SẢN PHẨM LỖI DO NGƯỜI SỬ DỤNG</strong></p>\n							</td>\n						</tr>\n						<tr>\n							<td rowspan=\"4\">\n								<p>Sản phẩm Điện tử, Đồ chơi điện - điện tử, điện gia dụng,... (c&oacute; tem phiếu bảo h&agrave;nh từ nh&agrave; cung cấp)</p>\n							</td>\n							<td rowspan=\"2\">\n								<p>7 ng&agrave;y đầu ti&ecirc;n</p>\n							</td>\n							<td>\n								<p>Đổi mới</p>\n							</td>\n							<td rowspan=\"3\">\n								<p>Trả h&agrave;ng kh&ocirc;ng thu ph&iacute;</p>\n							</td>\n							<td rowspan=\"4\">\n								<p>Bảo h&agrave;nh hoặc sửa chữa c&oacute; thu ph&iacute; theo quy định của nh&agrave; cung cấp.</p>\n							</td>\n						</tr>\n						<tr>\n							<td>\n								<p>Trả kh&ocirc;ng thu ph&iacute;</p>\n							</td>\n						</tr>\n						<tr>\n							<td>\n								<p>8 - 30 ng&agrave;y</p>\n							</td>\n							<td>\n								<p>Bảo h&agrave;nh</p>\n							</td>\n						</tr>\n						<tr>\n							<td>\n								<p>30 ng&agrave;y trở đi</p>\n							</td>\n							<td>\n								<p>Bảo h&agrave;nh</p>\n							</td>\n							<td>\n								<p>Kh&ocirc;ng hỗ trợ đổi/ trả</p>\n							</td>\n						</tr>\n						<tr>\n							<td rowspan=\"3\">\n								<p>Voucher/ E-voucher</p>\n							</td>\n							<td rowspan=\"2\">\n								<p>30 ng&agrave;y đầu ti&ecirc;n</p>\n							</td>\n							<td>\n								<p>Đổi mới</p>\n							</td>\n							<td rowspan=\"2\">\n								<p>Kh&ocirc;ng hỗ trợ đổi/ trả</p>\n							</td>\n							<td rowspan=\"2\">\n								<p>Kh&ocirc;ng hỗ trợ đổi/ trả</p>\n							</td>\n						</tr>\n						<tr>\n							<td>\n								<p>Trả h&agrave;ng kh&ocirc;ng thu ph&iacute;</p>\n							</td>\n						</tr>\n						<tr>\n							<td>\n								<p>30 ng&agrave;y trở đi</p>\n							</td>\n							<td colspan=\"3\">\n								<p>Kh&ocirc;ng hỗ trợ đổi trả</p>\n							</td>\n						</tr>\n						<tr>\n							<td rowspan=\"3\">\n								<p>Đối với c&aacute;c ng&agrave;nh h&agrave;ng c&ograve;n lại</p>\n							</td>\n							<td rowspan=\"2\">\n								<p>30 ng&agrave;y đầu ti&ecirc;n</p>\n							</td>\n							<td>\n								<p>Đổi mới</p>\n							</td>\n							<td rowspan=\"2\">\n								<p>Trả h&agrave;ng kh&ocirc;ng thu ph&iacute;</p>\n							</td>\n							<td rowspan=\"3\">\n								<p>Kh&ocirc;ng hỗ trợ đổi/ trả</p>\n							</td>\n						</tr>\n						<tr>\n							<td>\n								<p>Trả kh&ocirc;ng thu ph&iacute;</p>\n							</td>\n						</tr>\n						<tr>\n							<td>\n								<p>30 ng&agrave;y trở đi</p>\n							</td>\n							<td colspan=\"2\">\n								<p>Kh&ocirc;ng hỗ trợ đổi/ trả</p>\n							</td>\n						</tr>\n					</tbody>\n				</table>\n				<p>&nbsp;</p>\n				<ul>\n					<li>\n						<p>Quý khách vui lòng thông báo về cho  ngay khi:</p>\n						<p>		+ Kiện hàng giao tới ngoại quan bên ngoài có dấu hiệu hư hại , sản phẩm bên trong trầy xước ,gãy bìa,  rách, móp méo, ướt , bể vỡ...trong vòng 2 ngày kể từ khi nhận hàng thành công.</p>\n						<p>		+ Sản phẩm giao tới bị sai hàng , giao thiếu hàng trong vòng 2 ngày kể từ khi nhận hàng thành công.</p>\n					</li>\n					<li>\n						<p>Sau khi  x&aacute;c nhận mail tiếp nhận y&ecirc;u cầu kiểm tra xử l&yacute;,  sẽ li&ecirc;n hệ đến qu&yacute; kh&aacute;ch để x&aacute;c nhận th&ocirc;ng tin hoặc nhờ bổ sung th&ocirc;ng tin (nếu c&oacute;). Trường hợp kh&ocirc;ng li&ecirc;n hệ được  rất tiếc xin được ph&eacute;p từ chối xử l&yacute; y&ecirc;u cầu. Thời gian  li&ecirc;n hệ trong giờ h&agrave;nh ch&iacute;nh tối đa 3 lần trong v&ograve;ng 7 ng&agrave;y sau khi nhận th&ocirc;ng tin y&ecirc;u cầu.</p>\n					</li>\n					<li>\n						<p>Ch&uacute;ng t&ocirc;i sẽ kiểm tra c&aacute;c trường hợp tr&ecirc;n v&agrave; giải quyết cho qu&yacute; kh&aacute;ch tối đa trong 30 ng&agrave;y l&agrave;m việc kể từ khi qu&yacute; kh&aacute;ch nhận được h&agrave;ng, qu&aacute; thời hạn tr&ecirc;n rất tiếc ch&uacute;ng t&ocirc;i kh&ocirc;ng giải quyết khiếu nại.</p>\n					</li>\n				</ul>\n				<p style=\"display: inline !important;\"><strong>2. C&aacute;c trường hợp y&ecirc;u cầu đổi trả</strong></p>\n				<ul>\n					<li>\n						<p>Lỗi kỹ thuật của sản phẩm - do nh&agrave; cung cấp (s&aacute;ch thiếu trang, s&uacute;t g&aacute;y, tr&ugrave;ng nội dung, sản phẩm điện tử, đồ chơi điện &ndash; điện tử kh&ocirc;ng hoạt động..)</p>\n					</li>\n					<li>\n						<p>Giao nhầm/ giao thiếu (thiếu sản phẩm đ&atilde; đặt, thiếu phụ kiện, thiếu qu&agrave; tặng k&egrave;m theo)</p>\n					</li>\n					<li>\n						<p>Chất lượng h&agrave;ng h&oacute;a k&eacute;m, hư hại do vận chuyển.</p>\n					</li>\n					<li>\n						<p>H&igrave;nh thức sản phẩm kh&ocirc;ng giống m&ocirc; tả ban đầu.</p>\n					</li>\n					<li>\n						<p>Qu&yacute; kh&aacute;ch đặt nhầm/ kh&ocirc;ng c&ograve;n nhu cầu (*)</p>\n					</li>\n				</ul>\n				<p>(*) Đối với c&aacute;c Sản phẩm kh&ocirc;ng bị lỗi, chỉ &aacute;p dụng khi sản phẩm đ&aacute;p ứng đủ điều kiện sau:</p>\n				<p>Qu&yacute; kh&aacute;ch&nbsp;c&oacute; thể trả lại sản phẩm đ&atilde; mua tại&nbsp;<strong></strong> trong v&ograve;ng 30 ng&agrave;y kể từ khi nhận h&agrave;ng với đa số sản phẩm khi thỏa m&atilde;n c&aacute;c điều kiện sau:</p>\n				<ul>\n					<li>\n						<p>Sản phẩm kh&ocirc;ng c&oacute; dấu hiệu đ&atilde; qua sử dụng, c&ograve;n nguy&ecirc;n tem, m&aacute;c hay ni&ecirc;m phong của nh&agrave; sản xuất.</p>\n					</li>\n					<li>\n						<p>Sản phẩm c&ograve;n đầy đủ phụ kiện hoặc phiếu bảo h&agrave;nh c&ugrave;ng qu&agrave; tặng k&egrave;m theo (nếu c&oacute;).</p>\n					</li>\n					<li>\n						<p>Nếu l&agrave; sản phẩm điện &ndash; điện tử th&igrave; chưa bị k&iacute;ch hoạt, chưa c&oacute; sao ghi dữ liệu v&agrave;o thiết bị.</p>\n					</li>\n				</ul>\n				<strong>3. Điều kiện đổi trả</strong><br />\n				<p><strong></strong> hỗ trợ đổi/ trả sản phẩm cho qu&yacute; kh&aacute;ch nếu:</p>\n				<ul>\n					<li>\n						<p>Sản phẩm c&ograve;n nguy&ecirc;n bao b&igrave; như hiện trạng ban đầu.</p>\n					</li>\n					<li>\n						<p>Sản phầm c&ograve;n đầy đủ phụ kiện, qu&agrave; tặng khuyến m&atilde;i k&egrave;m theo.</p>\n					</li>\n					<li>\n						<p>H&oacute;a đơn GTGT (nếu c&oacute;).</p>\n					</li>\n					<li>\n						<p>Cung cấp đầy đủ th&ocirc;ng tin đối chứng theo y&ecirc;u cầu (điều 4).</p>\n					</li>\n				</ul>\n				<p style=\"display: inline !important;\"><strong>4. Quy tr&igrave;nh đổi trả</strong></p>\n				<ul>\n					<li>\n						<p>Qu&yacute; kh&aacute;ch vui l&ograve;ng th&ocirc;ng tin đơn h&agrave;ng cần hỗ trợ đổi trả theo Hotline 0378173109 hoặc email về địa chỉ: <strong>cskh@.vn</strong> với ti&ecirc;u đề <strong>&ldquo;Đổi Trả Đơn H&agrave;ng \" M&atilde; đơn h&agrave;ng\".</strong></p>\n					</li>\n					<li>\n						<p>Qu&yacute; kh&aacute;ch cần cung cấp đ&iacute;nh k&egrave;m th&ecirc;m c&aacute;c bằng chứng để đối chiếu/ khiếu nại sau:</p>\n					</li>\n				</ul>\n				<p style=\"padding-left: 60px;\">+ Video clip quay rõ các mặt của kiện hàng trước khi khui để thể hiện tình trạng của kiện hàng.</p>\n				<p style=\"padding-left: 60px;\">+ Video clip mở kiện h&agrave;ng từ l&uacute;c bắt đầu khui ngoại quan đến kiểm tra sản phẩm b&ecirc;n trong thùng hàng.</p>\n				<p style=\"padding-left: 60px;\">+ Video quay rõ nét , không mờ , nhoè, thể hiện đầy đủ thông tin mã đơn hàng và quay cận cảnh lỗi của sản phẩm.</p>\n				<p style=\"padding-left: 60px;\">+ H&igrave;nh chụp tem kiện h&agrave;ng c&oacute; thể hiện m&atilde; đơn h&agrave;ng.</p>\n				<p style=\"padding-left: 60px;\">+ H&igrave;nh chụp t&igrave;nh trạng ngoại quan (băng keo, seal, h&igrave;nh dạng th&ugrave;ng h&agrave;ng, bao b&igrave;), đặc biệt c&aacute;c vị tr&iacute; nghi ngờ c&oacute; t&aacute;c động đến sản phẩm (m&oacute;p m&eacute;o, ướt, r&aacute;ch...)</p>\n				<p style=\"padding-left: 60px;\">+ H&igrave;nh chụp t&igrave;nh trạng sản phẩm b&ecirc;n trong, n&ecirc;u r&otilde; lỗi kỹ thuật nếu c&oacute;.</p>\n				<ul>\n					<li>Để đảm bảo quyền lợi kh&aacute;ch h&agrave;ng v&agrave; để <strong></strong> c&oacute; cơ sở l&agrave;m việc với c&aacute;c bộ phận li&ecirc;n quan, tất cả y&ecirc;u cầu đổi/ trả/ bảo h&agrave;nh qu&yacute; kh&aacute;ch cần cung cấp h&igrave;nh ảnh/ clip sản phẩm lỗi. Qu&aacute; thời gian đổi/ trả sản phẩm nếu chưa nhận được đủ h&igrave;nh ảnh/ clip từ qu&yacute; kh&aacute;ch, <strong></strong> xin ph&eacute;p từ chối hỗ trợ.</li>\n				</ul>\n				<table style=\"width: 756px;\" cellspacing=\"0\" cellpadding=\"7\">\n					<tbody>\n						<tr>\n							<td>\n								<p><strong>STT</strong></p>\n							</td>\n							<td>\n								<p><strong>Nội dung</strong></p>\n							</td>\n							<td>\n								<p><strong>C&aacute;ch thức giải quyết</strong></p>\n							</td>\n						</tr>\n						<tr>\n							<td>\n								<p>1</p>\n							</td>\n							<td>\n								<p>Lỗi kỹ thuật của sản phẩm - do nh&agrave; cung cấp (s&aacute;ch thiếu trang, s&uacute;t g&aacute;y, tr&ugrave;ng nội dung, sản phẩm điện tử kh&ocirc;ng hoạt động..)</p>\n							</td>\n							<td>\n								<p> c&oacute; sản phẩm&rarr; đổi mới c&ugrave;ng sản phẩm</p>\n								<p> hết h&agrave;ng&rarr; Ho&agrave;n tiền hoặc qu&yacute; kh&aacute;ch c&oacute; thể chọn mặt h&agrave;ng kh&aacute;c <span style=\"text-decoration: underline;\"></span>.</p>\n								<p>Đổi/trả kh&ocirc;ng thu ph&iacute;</p>\n							</td>\n						</tr>\n						<tr>\n							<td>\n								<p>2</p>\n							</td>\n							<td>\n								<p>Sản phẩm hỏng do qu&yacute; kh&aacute;ch</p>\n							</td>\n							<td>\n								<p>Kh&ocirc;ng hỗ trợ đổi/ trả</p>\n							</td>\n						</tr>\n						<tr>\n							<td>\n								<p>3</p>\n							</td>\n							<td>\n								<p>L&yacute; do đổi/trả sản phẩm như: kh&aacute;ch đặt nhầm hoặc kh&ocirc;ng c&ograve;n nhu cầu.</p>\n							</td>\n							<td>\n								<p>&nbsp;</p>\n								<p>Hỗ trợ thu hồi v&agrave; ho&agrave;n tiền 100% gi&aacute; trị sản phẩm cho qu&yacute; kh&aacute;ch h&agrave;ng.</p>\n								<p>**Lưu &yacute;:  rất tiếc sẽ kh&ocirc;ng hỗ trợ ho&agrave;n lại chi ph&iacute; vận chuyển trong đơn h&agrave;ng cho trường hợp n&agrave;y.</p>\n								<p>Đổi /trả kh&ocirc;ng thu ph&iacute;</p>\n							</td>\n						</tr>\n						<tr>\n							<td>\n								<p>4</p>\n							</td>\n							<td>\n								<p>Giao nhầm/ giao thiếu (thiếu sản phẩm đ&atilde; đặt, thiếu phụ kiện, thiếu qu&agrave; tặng k&egrave;m theo)</p>\n							</td>\n							<td>\n								<p>Giao nhầm &rarr; Đổi lại đ&uacute;ng sản phẩm đ&atilde; đặt.</p>\n								<p>Giao thiếu &rarr; Giao b&ugrave; th&ecirc;m số lượng c&ograve;n thiếu theo đơn h&agrave;ng.</p>\n								<p>Đổi /trả kh&ocirc;ng thu ph&iacute;</p>\n							</td>\n						</tr>\n						<tr>\n							<td>\n								<p>5</p>\n							</td>\n							<td>\n								<p>Chất lượng h&agrave;ng h&oacute;a k&eacute;m do vận chuyển</p>\n							</td>\n							<td>\n								<p>Khi qu&yacute; kh&aacute;ch h&agrave;ng nhận g&oacute;i h&agrave;ng bị m&oacute;p m&eacute;o, ướt, ch&uacute;ng t&ocirc;i khuyến c&aacute;o kh&aacute;ch h&agrave;ng n&ecirc;n kiểm tra thực tế h&agrave;ng h&oacute;a b&ecirc;n trong ngay thời điểm nhận h&agrave;ng, vui l&ograve;ng phản ảnh hiện trang h&agrave;ng h&oacute;a l&ecirc;n bill nhận h&agrave;ng từ ph&iacute;a nh&acirc;n vi&ecirc;n giao nhận v&agrave; li&ecirc;n lạc với ch&uacute;ng t&ocirc;i về hotline 1900-636467 trong v&ograve;ng 48 giờ để được hỗ trợ giải quyết cụ thể.</p>\n								<p>Đổi /trả kh&ocirc;ng thu ph&iacute;</p>\n							</td>\n						</tr>\n						<tr>\n							<td>\n								<p>6</p>\n							</td>\n							<td>\n								<p>H&igrave;nh thức sản phẩm kh&ocirc;ng giống m&ocirc; tả ban đầu</p>\n							</td>\n							<td>\n								<p>H&atilde;y li&ecirc;n hệ với ch&uacute;ng t&ocirc;i qua số hotline 0378173109, ch&uacute;ng t&ocirc;i sẵn s&agrave;ng lắng nghe v&agrave; giải quyết cho bạn (cụ thể theo từng trường hợp).</p>\n								<p>Đổi /trả kh&ocirc;ng thu ph&iacute;</p>\n							</td>\n						</tr>\n					</tbody>\n				</table>\n				<p>&nbsp;</p>\n				<p style=\"display: inline !important;\"><strong>5. C&aacute;ch thức chuyển sản phẩm đổi trả về </strong><a href=\"http://www./\"><strong></strong></a></p>\n				<ul>\n					<li>\n						<p>Khi y&ecirc;u cầu đổi trả được giải quyết, qu&yacute; kh&aacute;ch vui l&ograve;ng đ&oacute;ng g&oacute;i sản phẩm như hiện trạng khi nhận h&agrave;ng ban đầu (bao gồm sản phẩm, qu&agrave; tặng, phụ kiện k&egrave;m theo sản phẩm,&hellip;nếu c&oacute;).</p>\n					</li>\n					<li>\n						<p>H&oacute;a đơn gi&aacute; trị gia tăng của <a href=\"http://www./\"><strong></strong></a> (nếu c&oacute;).</p>\n					</li>\n					<li>\n						<p>Phụ kiện đi k&egrave;m sản phẩm v&agrave; qu&agrave; tặng khuyến m&atilde;i k&egrave;m theo (nếu c&oacute;).</p>\n					</li>\n					<li>\n						<p>Qu&yacute; kh&aacute;ch cần quay video clip đ&oacute;ng g&oacute;i sản phẩm để l&agrave;m bằng chứng đối chiếu/ khiếu nại li&ecirc;n quan đến đổi trả về sau (nếu cần).</p>\n					</li>\n					<li>\n						<p>Qu&yacute; kh&aacute;ch vui l&ograve;ng chịu tr&aacute;ch nhiệm về trạng th&aacute;i nguy&ecirc;n vẹn của sản phẩm khi gửi về <a href=\"http://www./\"><strong></strong></a><strong>.</strong><strong>&nbsp;</strong></p>\n					</li>\n					<li>\n						<p>Sau khi nhận được sản phẩm qu&yacute; kh&aacute;ch gởi về, <a href=\"http://www./\"><strong></strong></a> sẽ phản hồi v&agrave; cập nhật th&ocirc;ng tin tr&ecirc;n từng giai đoạn xử l&yacute; đến qu&yacute; kh&aacute;ch qua điện thoại/email .</p>\n					</li>\n				</ul>\n				<p><strong>Lưu &yacute; kh&aacute;c:</strong></p>\n				<p>(*) C&aacute;c sản phẩm thuộc \"Phi&ecirc;n chợ s&aacute;ch cũ\", \"Sách cũ đồng giá\" sẽ kh&ocirc;ng được &aacute;p dụng ch&iacute;nh s&aacute;ch đổi trả của <strong></strong>.</p>\n				<p>(*) Nếu qu&yacute; kh&aacute;ch hủy đơn h&agrave;ng cũ, đ&atilde; thanh to&aacute;n th&agrave;nh c&ocirc;ng, m&agrave; kh&ocirc;ng c&oacute; nhu cầu đặt lại đơn h&agrave;ng kh&aacute;c, hoặc qu&yacute; kh&aacute;ch y&ecirc;u cầu trả h&agrave;ng ho&agrave;n tiền &rarr; ch&uacute;ng t&ocirc;i sẽ ho&agrave;n tiền lại cho qu&yacute; kh&aacute;ch qua h&igrave;nh thức thanh to&aacute;n ban đầu, đối với c&aacute;c đơn h&agrave;ng qu&yacute; kh&aacute;ch thanh to&aacute;n bằng tiền mặt sẽ được ho&agrave;n qua t&agrave;i khoản Ng&acirc;n h&agrave;ng do qu&yacute; kh&aacute;ch chỉ định</p>\n				<p>Thời gian ho&agrave;n tiền được quy định tại Điều 6.</p>\n				<p>(*) Kh&ocirc;ng &aacute;p dụng đổi / trả / ho&agrave;n tiền đối với mặt h&agrave;ng Chăm S&oacute;c C&aacute; Nh&acirc;n v&agrave; c&aacute;c Đơn H&agrave;ng B&aacute;n Sỉ.</p>\n				<p><strong>6. Thời gian ho&agrave;n tiền</strong></p>\n				<ul>\n					<li>\n						<p>Đối với những đơn h&agrave;ng thanh to&aacute;n trả trước: sau khi cập nhật hủy, thời gian ho&agrave;n tiền sẽ t&ugrave;y thuộc v&agrave;o phương thức thanh to&aacute;n. Qu&yacute; kh&aacute;ch vui l&ograve;ng tham khảo thời gian ho&agrave;n tiền như sau:<br /> &nbsp;</p>\n					</li>\n				</ul>\n				<table style=\"width: 508px;\" cellspacing=\"1\" cellpadding=\"1\">\n					<tbody>\n						<tr>\n							<td>\n								<p><strong>Phương thức thanh to&aacute;n</strong></p>\n							</td>\n							<td>\n								<p><strong>Thời gian ho&agrave;n tiền</strong></p>\n							</td>\n						</tr>\n						<tr>\n							<td>\n								<p>ATM nội địa/ Cổng Zalo Pay/ Cổng VNPay</p>\n							</td>\n							<td>\n								<p>5 - 7 ng&agrave;y l&agrave;m việc</p>\n							</td>\n						</tr>\n						<tr>\n							<td>\n								<p>Chuyển khoản</p>\n							</td>\n							<td>\n								<p>5 - 7 ng&agrave;y l&agrave;m việc</p>\n							</td>\n						</tr>\n						<tr>\n							<td>\n								<p>Visa/ Master/ JCB</p>\n							</td>\n							<td>\n								<p>5 - 7 ng&agrave;y l&agrave;m việc (*)</p>\n							</td>\n						</tr>\n						<tr>\n							<td>\n								<p>V&iacute; Momo/ Moca/Zalopay/ShopeePay</p>\n							</td>\n							<td>\n								<p>1 - 3 ng&agrave;y l&agrave;m việc</p>\n							</td>\n						</tr>\n						<tr>\n							<td>\n								<p>Fpoint</p>\n							</td>\n							<td>\n								<p>24 giờ</p>\n							</td>\n						</tr>\n					</tbody>\n				</table>\n				<p><br /> (*) Lưu &yacute;:<br /> - Đối với thẻ Visa/ Master/ JCB,&nbsp; số tiền ho&agrave;n sẽ được ng&acirc;n h&agrave;ng chuyển v&agrave;o t&agrave;i khoản qu&yacute; kh&aacute;ch dao động 1-3 tuần l&agrave;m việc (t&ugrave;y theo ch&iacute;nh s&aacute;ch của từng ng&acirc;n h&agrave;ng).&nbsp;<br /> - Ng&agrave;y l&agrave;m việc kh&ocirc;ng bao gồm thứ 7, chủ nhật v&agrave; ng&agrave;y lễ.</p>\n				<ul>\n					<li>\n						<p>Đối với những đơn h&agrave;ng trả h&agrave;ng ho&agrave;n tiền:</p>\n					</li>\n					<li>\n						<p>Thời gian ho&agrave;n tiền được bắt đầu t&iacute;nh kể từ thời điểm  nhận được h&agrave;ng ho&agrave;n trả v&agrave; x&aacute;c nhận với qu&yacute; kh&aacute;ch về việc h&agrave;ng ho&agrave;n trả đ&aacute;p ứng c&aacute;c điều kiện trả h&agrave;ng được quy định tại ch&iacute;nh s&aacute;ch n&agrave;y. Thời gian ho&agrave;n tiền tu&acirc;n thủ theo quy định tại Mục 6 n&agrave;y.</p>\n					</li>\n					<li>\n						<p>Đối với c&aacute;c đơn h&agrave;ng ho&agrave;n tiền, h&igrave;nh thức thanh to&aacute;n của qu&yacute; kh&aacute;ch l&agrave; tiền mặt (COD):  sẽ ho&agrave;n tiền qua t&agrave;i khoản Ng&acirc;n h&agrave;ng do qu&yacute; kh&aacute;ch chỉ định.</p>\n					</li>\n				</ul>\n				<p>Trong trường hợp đ&atilde; qu&aacute; thời gian tr&ecirc;n qu&yacute; kh&aacute;ch chưa nhận được tiền ho&agrave;n, vui l&ograve;ng li&ecirc;n hệ ng&acirc;n h&agrave;ng ph&aacute;t h&agrave;nh thẻ hoặc li&ecirc;n hệ bộ phận Chăm s&oacute;c kh&aacute;ch h&agrave;ng của  .&nbsp;</p>\n				<p><strong>Nếu cần hỗ trợ th&ecirc;m</strong><strong> bất k&igrave; th&ocirc;ng tin n&agrave;o, Fahasa nhờ</strong><strong> qu&yacute; kh&aacute;ch li&ecirc;n hệ trực tiếp qua</strong><strong>hotline 0378173109</strong><strong>để được hỗ trợ nhanh ch&oacute;ng.</strong></p>\n				<p>&nbsp;</p>\n				', 'chinh-sach-doi-hang.jpg', 'page', 'Chính sách đổi hàng', '2024-01-12 04:56:41', 0, '2024-01-12 04:57:53', 1, 1),
 (11, NULL, 'GIỚI THIỆU', 'gioi-thieu', ' <p>\n\n               Chào mừng bạn đến với trang web bán sách của chúng tôi - nơi tận hưởng niềm đam mê đọc sách và khám phá thế giới văn hóa đa dạng. Tại đây, chúng tôi tự hào mang đến cho bạn một trải nghiệm mua sắm sách trực tuyến độc đáo, phong cách và tiện lợi.\n            </p>\n            <p>\n               Với một thư viện sách đa dạng từ các thể loại văn học, khoa học, kinh doanh đến sách thiếu nhi và nhiều hơn nữa, chúng tôi cam kết cung cấp những tác phẩm chất lượng từ các tác giả nổi tiếng cũng như những tên tuổi mới xuất sắc. Bạn có thể dễ dàng tìm kiếm, so sánh và chọn lựa những cuốn sách phù hợp với sở thích và nhu cầu của mình.\n            </p>\n            <p>\n               Ngoài ra, chúng tôi không chỉ là nơi mua sắm, mà còn là cộng đồng yêu sách, nơi bạn có thể chia sẻ đánh giá, gợi ý và thảo luận với những người đồng điệu về văn hóa đọc. Chúng tôi cam kết mang đến cho bạn không gian tương tác và trải nghiệm mua sắm trực tuyến thú vị.\n            </p>\n            <p>\n               Hãy bắt đầu hành trình đọc sách của bạn tại trang web của chúng tôi, nơi mà chúng tôi kết nối đam mê và tri thức. Cảm ơn bạn đã ghé thăm và mong rằng bạn sẽ tận hưởng mỗi chuyến phiêu lưu qua từng trang sách với chúng tôi.\n            </p>', 'post_page.png', 'page', 'Giới thiệu', '2024-01-14 14:47:41', 1, '2024-01-27 02:36:28', 1, 1),
@@ -385,7 +385,7 @@ INSERT INTO `2122110588_post` (`id`, `topic_id`, `title`, `slug`, `detail`, `ima
 (16, 1, 'Lễ hội Đường sách Tết sẽ có lì xì sách', 'duong-sach', '<div>\r\n    <h4>Tiếp nối thành công sau 13 năm tổ chức, Lễ hội Đường sách tết Giáp Thìn năm 2024 tại TP.HCM với chủ đề \'Xuân yêu thương - Tết sum vầy\' sẽ có 52 hoạt động, trong đó có nhiều chương trình chưa từng có..</h4>\r\n    <p>Theo Ban tổ chức, Lễ hội Đường sách tết Giáp Thìn sẽ khai mạc vào 17 giờ ngày 7.2 (nhằm ngày 28 tháng chạp) và kéo dài xuyên suốt đến hết ngày 14.2 (mùng 5 tết) tại tuyến đường Lê Lợi (từ Nguyễn Huệ đến bùng binh Quách Thị Trang), Q.1, TP.HCM.</p>\r\n    <img src=\"https://images2.thanhnien.vn/thumb_w/640/528068263637045248/2024/1/9/linh-vat1-17047979227791564276153.png\" style=\"max-width: 800px; align-items: center;\">\r\n    <p>Lễ hội Đường sách tết Giáp Thìn 2024 mở rộng quy mô so với năm 2023, với tổng diện tích lên đến 11.200 m2, được chia thành 3 khu vực chính:</p>\r\n    <p>Khu A (từ đường Nguyễn Huệ đến Pasteur): diễn ra lễ khai mạc và nhiều nội dung trưng bày, triển lãm đặc sắc như triển lãm, giới thiệu các tác phẩm, bài thơ chúc tết, bài báo của Chủ tịch Hồ Chí Minh được viết vào năm 1954, năm 1964; các tác phẩm đạt giải thưởng sáng tác, quảng bá tác phẩm văn học, nghệ thuật, báo chí với chủ đề Học tập và làm theo tư tưởng, đạo đức, phong cách Hồ Chí Minh; trưng bày, triển lãm các tác phẩm, sách của các nhà cách mạng tiền bối, các đồng chí lãnh đạo Đảng và nhà nước các thời kỳ; triển lãm báo xuân và giới thiệu sách của các cơ quan báo chí và những người làm báo đến người dân và du khách; triển lãm tư liệu, hình ảnh, tác phẩm nhân kỷ niệm 70 năm chiến thắng Điện Biên Phủ, 80 năm ngày thành lập Quân đội nhân dân Việt Nam, 120 năm ngày sinh đồng chí Trần Phú và giới thiệu các tác phẩm đặc sắc đoạt giải của chương trình Người Việt yêu sử Việt.</p>\r\n    <h4>Nhiều hoạt động hấp dẫn trong những ngày xuân</h4>\r\n    <p>Tại lễ hội còn có triển lãm những hình ảnh, tư liệu, ấn phẩm mới về những công trình tiêu biểu của TP.HCM; giới thiệu, trưng bày những tác phẩm đạt giải, tác phẩm ấn tượng trong hội thi Công dân thành phố với hành trình văn hóa TP.HCM năm 2023; giới thiệu, trưng bày những tác phẩm đạt giải, tác phẩm ấn tượng trong hội thi thiết kế sản phẩm đồ họa thông tin tuyên truyền nghị quyết 98/2023/QH15 của Quốc hội về thí điểm một số cơ chế, chính sách đặc thù phát triển TP.HCM; cuộc thi Lắng nghe người dân hiến kế lần 5 của Báo Người Lao động.</p>\r\n    <img src=\"https://images2.thanhnien.vn/thumb_w/640/528068263637045248/2024/1/9/screenshot-455-1704797922724121141819.png\" style=\"max-width: 800px; align-items: center;\">\r\n    </div>\r\n', 'post-3.jpg', 'post', '', '2024-01-16 13:26:22', 1, NULL, 1, 1),
 (17, 1, 'Đưa sách hay đến với học sinh', 'sach-hay', '<div>\r\n    <h3>Hầu như trường nào cũng có thư viện nhưng danh mục sách vẫn còn nghèo nàn. Vì thế, những chương trình vận động đóng góp sách để xây dựng tủ sách là rất cần thiết.</h3>\r\n    <p>Là một thành viên trong nhóm những người vận động xây dựng chuỗi Thư viện Đặng Thùy Trâm, tôi rất cảm kích trước sáng kiến này của những anh chị em khởi xướng. Tôi rất vinh dự được giới thiệu câu chuyện này qua các phương tiện truyền thông báo chí để mọi người có cơ hội hưởng ứng và đóng góp xây dựng những thư viện sách, cho học sinh và mọi người yêu sách có thể đọc được những quyển sách hay nhất, bổ ích nhất.</p>\r\n    <img src=\"https://images2.thanhnien.vn/528068263637045248/2024/1/9/thu-vien-1-1704780019244593873921.jpg\" style=\"max-width: 800px;\">\r\n    <p>Hiện hầu như trường nào cũng có thư viện, nhưng danh mục sách ở đó rất nghèo nàn. Mục đích của chúng tôi khi vận động xây dựng chuỗi thư viện Đặng Thùy Trâm không phải là xây cất ngoại thất và nội thất thư viện, mà chủ yếu là tặng những quyển sách hay, đáng đọc cho các em học sinh đọc sách, lâu dần sẽ tạo cho các em thói quen đọc sách. Đọc một quyển sách hay có thể thay đổi cả cuộc đời, đó là câu chuyện có thật từ cựu Tổng thống Mỹ Barack Obama.</p>\r\n    <p>Khi Việt Nam chúng ta đã có \"Ngày sách\", ngày đọc sách, thì không phải chỉ đọc sách trong ngày ấy, những ngày khác lại không đọc. Đọc sách là một thói quen được xây dựng một cách kiên trì, và người đọc cũng phải yêu sách, thích đọc sách thường xuyên, mới xây dựng được văn hóa đọc sách cho một quốc gia.</p>\r\n\r\n    <p>Vừa rồi, gia đình tôi đã mua sách đủ trang bị cho một thư viện ở Trường THCS Nam Đàn huyện Mộ Đức (Quảng Ngãi), quê hương tôi. Sự nhiệt tình của lãnh đạo huyện Mộ Đức, của Hiệu trưởng Trường Nam Đàn đã cổ vũ chúng tôi làm công việc này rất nhanh và có hiệu quả cao.</p>\r\n    <p>Mới đây, gia đình tôi tiếp tục tặng \"Tủ sách Đặng Thùy Trâm\" cho Trường THCS Lê Hồng Phong thuộc phường Hương Long, TP.Huế, từ một lý do rất tình cảm vì trường này ở ngay trên làng quê vợ tôi.</p>\r\n    <img src=\"https://images2.thanhnien.vn/528068263637045248/2024/1/9/thu-vien-2-17047800601681261655859.jpg\" style=\"max-width: 800px;\">\r\n    </div>\r\n<div>\r\n    <h3>Hầu như trường nào cũng có thư viện nhưng danh mục sách vẫn còn nghèo nàn. Vì thế, những chương trình vận động đóng góp sách để xây dựng tủ sách là rất cần thiết.</h3>\r\n    <p>Là một thành viên trong nhóm những người vận động xây dựng chuỗi Thư viện Đặng Thùy Trâm, tôi rất cảm kích trước sáng kiến này của những anh chị em khởi xướng. Tôi rất vinh dự được giới thiệu câu chuyện này qua các phương tiện truyền thông báo chí để mọi người có cơ hội hưởng ứng và đóng góp xây dựng những thư viện sách, cho học sinh và mọi người yêu sách có thể đọc được những quyển sách hay nhất, bổ ích nhất.</p>\r\n    <img src=\"https://images2.thanhnien.vn/528068263637045248/2024/1/9/thu-vien-1-1704780019244593873921.jpg\" style=\"max-width: 800px; align-items: center;\">\r\n    <p>Hiện hầu như trường nào cũng có thư viện, nhưng danh mục sách ở đó rất nghèo nàn. Mục đích của chúng tôi khi vận động xây dựng chuỗi thư viện Đặng Thùy Trâm không phải là xây cất ngoại thất và nội thất thư viện, mà chủ yếu là tặng những quyển sách hay, đáng đọc cho các em học sinh đọc sách, lâu dần sẽ tạo cho các em thói quen đọc sách. Đọc một quyển sách hay có thể thay đổi cả cuộc đời, đó là câu chuyện có thật từ cựu Tổng thống Mỹ Barack Obama.</p>\r\n    <p>Khi Việt Nam chúng ta đã có \"Ngày sách\", ngày đọc sách, thì không phải chỉ đọc sách trong ngày ấy, những ngày khác lại không đọc. Đọc sách là một thói quen được xây dựng một cách kiên trì, và người đọc cũng phải yêu sách, thích đọc sách thường xuyên, mới xây dựng được văn hóa đọc sách cho một quốc gia.</p>\r\n\r\n    <p>Vừa rồi, gia đình tôi đã mua sách đủ trang bị cho một thư viện ở Trường THCS Nam Đàn huyện Mộ Đức (Quảng Ngãi), quê hương tôi. Sự nhiệt tình của lãnh đạo huyện Mộ Đức, của Hiệu trưởng Trường Nam Đàn đã cổ vũ chúng tôi làm công việc này rất nhanh và có hiệu quả cao.</p>\r\n    <p>Mới đây, gia đình tôi tiếp tục tặng \"Tủ sách Đặng Thùy Trâm\" cho Trường THCS Lê Hồng Phong thuộc phường Hương Long, TP.Huế, từ một lý do rất tình cảm vì trường này ở ngay trên làng quê vợ tôi.</p>\r\n    <img src=\"https://images2.thanhnien.vn/528068263637045248/2024/1/9/thu-vien-2-17047800601681261655859.jpg\" style=\"max-width: 800px; align-items: center;\">\r\n    </div>\r\n', 'post-2.jpg', 'post', NULL, '2024-04-19 17:31:39', 1, NULL, 1, 1),
 (18, 2, 'Năm 2024, sẽ in khoảng 30.000 sách cho trẻ em vùng núi, vùng sâu vùng xa', 'sach-moi-nam-2024', '<div>\r\n    <h5><b>Chủ tịch Hội Nhà văn Việt Nam Nguyễn Quang Thiều cho biết, năm 2024, Hội dự kiến sẽ in và tổ chức tặng 30.000 bản sách thiếu nhi cho trẻ em miền núi, vùng sâu vùng xa.</b></h5>\r\n    <img src=\"https://imgchinhsachcuocsong.vnanet.vn/MediaUpload/Org/2024/01/26/200637-hoi-nv-260124.jpg\" style=\"max-width: 800px; align-items: center;\">\r\n    <br>\r\n    <p>TTXVN - Ngày 26/1, tại Hội nghị triển khai công tác văn học năm 2024 và Lễ kết nạp hội viên Hội Nhà văn Việt Nam, Chủ tịch Hội Nhà văn Việt Nam Nguyễn Quang Thiều cho biết: Trong năm 2024, Hội sẽ triển khai nhiều hoạt động cụ thể. Trước mắt, Hội đang tập trung chuẩn bị cho Ngày thơ Việt Nam lần thứ 22 diễn ra vào Rằm tháng Giêng năm Giáp Thìn tại Hoàng thành Thăng Long. Tiếp đó là trao Giải thưởng Hội Nhà văn Việt Nam năm 2023, Giải Tác giả Trẻ năm 2023, Giải Nhà văn nữ ấn tượng năm 2023; tổng kết và trao giải \"Cuộc vận động sáng tác văn học về đề tài thiếu nhi\" đợt 1 và phát động \"Cuộc vận động sáng tác văn học về đề tài thiếu nhỉ\" đợt 2 đến tháng 8/2025. Trong quý I năm 2024, Hội Nhà văn Việt Nam sẽ kiện toàn tổ chức Báo Văn nghệ, Nhà xuất bản Hội nhà văn, Bảo tàng Văn học Việt Nam, Hãng phim Hội nhà văn.</p>\r\n    <p>Theo Chủ tịch Hội Nhà văn Việt Nam Nguyễn Quang Thiều, Hội sẽ tiếp tục “Dự án sách miễn phí cho trẻ em miền núi và vùng sâu, vùng xa\" khởi xướng từ năm 2021, dự kiến in và tổ chức tặng 30.000 (3 vạn) bản sách thiếu nhi cho trẻ em miền núi, vùng sâu vùng xa trong năm 2024. Đồng thời, Hội triển khai và tổ chức hội thảo tổng kết 50 năm văn học Việt Nam kể từ ngày đất nước thống nhất bằng nhiều hình thức xuất bản, hội thảo, in sách..; tiến hành dự án in 50 tác phẩm văn học xuất sắc trong 50 năm qua.</p>\r\n    <p>Trong năm 2024, Hội Nhà văn Việt Nam dự kiến tổ chức Hội nghị văn học sông Mekong vào tháng 10/2024 tại Hà Nội với thành phần là Chủ tịch hoặc Phó Chủ tịch các Hội Nhà văn, nước thành viên trong tổ chức \"Giải thưởng văn học sông Mekong\" nhằm đánh giá hoạt động của tổ chức này sau 16 năm hoạt động và hoạch định chương trình cho giải thưởng này trong xu thế mới. Đồng thời, Hội Nhà văn Việt Nam cùng Hội nhà văn Trung Quốc tổ chức hội thảo văn học \"Viết trước những thay đổi của thế giới\"; đón đoàn nhà văn Cuba, Palestine, Hàn Quốc, Colombia...</p>\r\n    <p>Đặc biệt, năm 2024, Hội Nhà văn Việt Nam sẽ thực hiện dự án trợ giúp in sách cho các nhà văn Cuba. Dự kiến, bắt đầu từ năm 2024, Hội sẽ in mỗi năm 5 tác phẩm tiêu biểu của văn học Cuba do Hội Nhà văn Cuba tuyển chọn. Mỗi tác phẩm dự kiến in 2.000 bản và gửi tới Cuba bằng đường tàu biển.</p>\r\n    <img src=\"https://imgchinhsachcuocsong.vnanet.vn/MediaUpload/Org/2024/01/26/200739-hoi-vien2-260124.jpg\" style=\"max-width: 800px; align-items: center;\">\r\n    <br>\r\n    \r\n</div>\r\n  ', 'post-1.jpg', 'post', '', '2024-04-19 17:31:39', 1, NULL, 1, 1);
-INSERT INTO `2122110588_post` (`id`, `topic_id`, `title`, `slug`, `detail`, `image`, `type`, `description`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`) VALUES
+INSERT INTO `post` (`id`, `topic_id`, `title`, `slug`, `detail`, `image`, `type`, `description`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`) VALUES
 (19, 2, 'Lựa chọn sách giáo khoa theo quy định mới', 'lua-chon-sach-giao-khoa-theo-quy-dinh-moi', '<div>\r\n    <p><b>Theo Thông tư số 27, ngày 28-12-2023 của Bộ Giáo dục và Đào tạo (GD-ĐT) quy định việc lựa chọn sách giáo khoa (SGK) trong các cơ sở giáo dục phổ thông (có hiệu lực từ ngày 12-2), quyền lựa chọn, quyết định SGK sẽ được trao lại cho các nhà trường. Sở GD-ĐT sẽ tổ chức triển khai công tác lựa chọn SGK sau khi UBND tỉnh ban hành các tiêu chí lựa chọn.</b></p>\r\n    <p><b>Nhà trường quyết định lựa chọn sách giáo khoa</b></p>\r\n    <p>Tính từ khi triển khai Chương trình Giáo dục phổ thông 2018 đến nay, Bộ GD-ĐT đã 3 lần thay đổi quy định chọn SGK. Cụ thể, theo Thông tư số 01, ngày 30-1-2020 hướng dẫn lựa chọn SGK trong các cơ sở giáo dục phổ thông, quyền lựa chọn, quyết định SGK là của các trường, thực hiện từ năm học 2020-2021. Sau đó, Thông tư số 25, ngày 26-8-2020 (thay thế cho Thông tư 01) quy định, hội đồng lựa chọn SGK do UBND cấp tỉnh thành lập, áp dụng từ năm học 2021 - 2022. Tuy nhiên, theo kết luận của Đoàn giám sát của Ủy ban Thường vụ Quốc hội về đổi mới chương trình, SGK, quy định lựa chọn SGK phổ thông tại Thông tư số 25 chưa chặt chẽ, dẫn tới cách thức triển khai không thống nhất giữa các địa phương; tạo kẽ hở để trục lợi, cạnh tranh không lành mạnh. Vì thế, Thông tư số 27 ra đời, thay thế Thông tư số 25 đã trao lại quyền lựa chọn SGK cho các nhà trường, UBND tỉnh chỉ phê duyệt danh mục do các trường lựa chọn. Thông tư mới sẽ được áp dụng từ năm học 2024 - 2025 để lựa chọn SGK cho khối 5, 9 và 12, những khối lớp cuối cùng trong lộ trình triển khai Chương trình Giáo dục phổ thông 2018 ở các cấp học.</p>\r\n    \r\n    <img src=\"https://baokhanhhoa.vn/file/e7837c02857c8ca30185a8c39b582c03/012024/hoc_sinh_lop_9_5_thcens_ngo_quye_20240125093709_20240125163143.jpg\" style=\"max-width: 800px; align-items: center;\">\r\n    <br>\r\n    <p>Cụ thể, theo Thông tư số 27, hội đồng lựa chọn SGK của cơ sở giáo dục do người đứng đầu (hiệu trưởng nhà trường hoặc giám đốc trung tâm giáo dục thường xuyên...) thành lập, bao gồm: Người đứng đầu, cấp phó người đứng đầu, tổ trưởng tổ chuyên môn, nhóm chuyên môn, phòng chuyên môn, đại diện giáo viên, đại diện ban đại diện cha mẹ học sinh. Số lượng thành viên hội đồng là số lẻ, tối thiểu 11 người. Đối với cơ sở giáo dục có quy mô dưới 10 lớp, số lượng thành viên hội đồng tối thiểu là 5 người. Hội đồng sẽ tổ chức thẩm định biên bản các cuộc họp của tổ chuyên môn; các phiếu nhận xét, đánh giá SGK của giáo viên; danh mục SGK do các tổ chuyên môn lựa chọn; sau đó tổng hợp, đề xuất danh mục SGK với người đứng đầu. SGK được lựa chọn phải bảo đảm có từ 1/2 số giáo viên môn học trở lên bỏ phiếu lựa chọn. Nếu không đạt, tổ chuyên môn phải thảo luận, bỏ phiếu lựa chọn lại. Phòng GD-ĐT hoặc Sở GD-ĐT có trách nhiệm thẩm định hồ sơ lựa chọn SGK của các cơ sở giáo dục thuộc phạm vi quản lý. UBND tỉnh sẽ xem xét, phê duyệt danh mục SGK do các cơ sở giáo dục lựa chọn. Trước ngày 30-4 hàng năm, các cơ sở giáo dục phải thông báo danh mục SGK được phê duyệt đến giáo viên, học sinh, cha mẹ học sinh được biết.</p>\r\n    <p><b>Mong sớm có sách để nghiên cứu, lựa chọn</b></p>\r\n    <p>Vừa qua, Bộ GD-ĐT đã phê duyệt danh mục 41 SGK lớp 5; 48 SGK lớp 9 và 39 SGK lớp 12, đồng thời vẫn đang tiếp tục nhận hồ sơ đề nghị thẩm định SGK theo Chương trình Giáo dục phổ thông 2018 sử dụng từ năm học 2024 - 2025. Ông Lê Đình Thuần - Phó Giám đốc Sở GD-ĐT cho biết, các phòng GD-ĐT và cơ sở giáo dục có nhiệm vụ phổ biến, quán triệt Thông tư số 27 đến cán bộ quản lý, giáo viên để chủ động nghiên cứu. Mới đây, sở đã có văn bản đề nghị UBND tỉnh xem xét, chấp thuận để sở hoàn thiện dự thảo Quyết định quy định tiêu chí lựa chọn SGK trong cơ sở giáo dục phổ thông trên địa bàn tỉnh, dự kiến ban hành trong quý I/2024. Sau khi có quyết định của UBND tỉnh, sở sẽ tổ chức hội nghị triển khai, hướng dẫn công tác lựa chọn SGK theo quy định mới.</p>\r\n    <img src=\"https://baokhanhhoa.vn/file/e7837c02857c8ca30185a8c39b582c03/012024/img_0871_20240125093730_20240125163203.jpg\" style=\"max-width: 800px; align-items: center;\">\r\n    <p>Theo thầy Nguyễn Anh Tuấn - Hiệu trưởng Trường THCS Ngô Quyền (huyện Diên Khánh), việc trao quyền cho nhà trường lựa chọn SGK sẽ phát huy sự chủ động, nâng cao tinh thần trách nhiệm của cán bộ quản lý, giáo viên trong việc nghiên cứu, lựa chọn SGK phù hợp với điều kiện, đặc điểm từng trường. Nhà trường đã yêu cầu cán bộ, giáo viên chủ động nghiên cứu kỹ Thông tư số 27. Sau khi Phòng GD-ĐT huyện tổ chức tập huấn, trường sẽ triển khai các bước lựa chọn SGK lớp 9 theo quy định. Cô Võ Trần Thu Ngân - giáo viên Trường Tiểu học Xuân Sơn (huyện Vạn Ninh) cho rằng: “Để lựa chọn SGK lớp 5 phù hợp, giáo viên còn phải nghiên cứu SGK từ lớp 1 đến lớp 4 trong chương trình mới, từ đó có sự đối chiếu, so sánh giữa cái mới và cũ để chọn SGK lớp 5 đảm bảo tính kết nối, liên thông với các khối lớp trước. Giáo viên mong muốn sớm có sách để có thời gian đọc, nghiên cứu kỹ lưỡng, cùng nhau thảo luận để tìm ra những điểm phù hợp và chưa phù hợp với trường mình”.</p>\r\n    <br>\r\n    \r\n</div>\r\n  ', 'post-4.jpg', 'post', NULL, '2024-04-19 17:32:51', 1, NULL, 1, 1),
 (20, 2, 'Mãn nhãn với những bản sách nghệ thuật', 'man-nhan-voi-nhung-ban-sach-nghe-thuat', '<div>\r\n    <p><b><i>Gần 30 ấn bản sách đẹp hiện đang được trưng bày tại Bookbinders (211 - 213 Võ Văn Tần, phường 5, quận 3, TPHCM). Chương trình mở cửa tự do để bạn đọc có cơ hội xem và thưởng thức các ấn bản giới hạn do Đông A thực hiện từ năm 2021 đến nay.</i></b></p>\r\n    <p><b>Đây là lần thứ hai Đông A tổ chức hoạt động trưng bày nhằm giới thiệu rộng rãi tới độc giả các ấn bản sách được chế tác với nhiều công đoạn thủ công. Đầu năm 2023, lần đầu tiên, Đông A trưng bày, giới thiệu các ấn bản sách giới hạn, đặc biệt (thường được gọi chung là sách S - viết tắt của từ special) tới đông đảo bạn đọc, các nhà sưu tầm và khách tham quan tại nhà sách Cá Chép (TPHCM).</b></p>\r\n    \r\n    <img src=\"https://image.sggp.org.vn/w680/Uploaded/2024/naeyut/2024_01_25/2-khong-gian-trung-bay-3583.jpg.webp\" style=\"max-width: 800px; align-items: center;\">\r\n    <br>\r\n    <p>Trong khuôn khổ sự kiện, có gần 30 ấn bản sách đẹp được trưng bày. Trong đó, có 7 ấn bản đặc biệt S100 phát hành năm 2023 là Hoàng tử bé, Nghìn lẻ một đêm (2 tập), Gió đầu mùa & Hà Nội băm sáu phố phường, Đôi lứa xứng đôi - Nửa đêm - Cười, Việt Nam văn hóa sử cương, Ngụ ngôn La Fontaine, Đại Việt sử ký toàn thư.</p>\r\n    <p><b>Ngoài ra, ấn bản Nghệ thuật Dessin ký hiệu chữ A cũng được trưng bày trong dịp này. Đây là cuốn sách của họa sĩ Nguyễn Đình Đăng, mang đến các kiến thức về nghệ thuật và chất liệu vẽ dessin, kể từ thế kỷ XIII - XV, được tổng hợp và hệ thống hóa trong mối liên hệ mật thiết với lịch sử mỹ thuật, triết học và khoa học trong cùng một cuốn sách. Ấn phẩm này vừa được trao Giải thưởng Sách Quốc gia cuối tháng 12-2023.</b></p>\r\n    <p>Mỗi ấn bản đều có quy cách khác nhau. Đơn cử như ấn bản đặc biệt Đại Việt sử ký toàn thư có hộp sơn mài màu đỏ, bìa sách bọc bằng da dê Pháp màu vàng nghệ Curri của hãng Alran Sully...</p>\r\n    <img src=\"https://image.sggp.org.vn/w680/Uploaded/2024/naeyut/2024_01_25/img-0505-1547.jpg.webp\" style=\"max-width: 800px; align-items: center;\">\r\n    <p>Sự kiện trưng bày sách S tại Bookbinders mở cửa từ 10 giờ đến 17 giờ hàng ngày, từ ngày 25 đến 28-1. Riêng ngày Chủ nhật (28-1), tại fanpage Đông A Gallery, Đông A sẽ tổ chức phiên đấu giá trực tuyến 8 ấn bản đặc biệt ký hiệu chữ A.</p>\r\n    <p>Một số ấn phẩm đang được trưng bày tại Bookbinders:</p>\r\n\r\n<img src=\"https://image.sggp.org.vn/w680/Uploaded/2024/naeyut/2024_01_25/13-an-ban-dac-biet-hoang-tu-be-5891.jpg.webp\" style=\"max-width: 800px; align-items: center;\">\r\n<img src=\"https://image.sggp.org.vn/w680/Uploaded/2024/naeyut/2024_01_25/10-an-ban-dac-biet-doi-lua-xung-doi-nua-dem-cuoi-6412.jpg.webp\" style=\"max-width: 800px; align-items: center;\">\r\n<img src=\"https://image.sggp.org.vn/w680/Uploaded/2024/naeyut/2024_01_25/9-an-ban-dac-biet-ngu-ngon-la-fontaine-8250.jpg.webp\" style=\"max-width: 800px; align-items: center;\">\r\n<img src=\"https://image.sggp.org.vn/w680/Uploaded/2024/naeyut/2024_01_25/8-an-ban-dac-biet-so-do-8529.jpg.webp\" style=\"max-width: 800px; align-items: center;\">\r\n<img src=\"https://image.sggp.org.vn/w680/Uploaded/2024/naeyut/2024_01_25/5-an-ban-dac-biet-dai-viet-su-ky-toan-thu-8952.jpg.webp\" style=\"max-width: 800px; align-items: center;\">\r\n</div>\r\n  ', 'post-5.jpg', 'post', NULL, '2024-04-19 17:32:51', 1, NULL, 1, 1),
 (21, 1, 'Giáo sư 86 tuổi ra mắt sách bảo vệ sức khoẻ', 'giao-su-86-tuoi-ra-mat-sach-bao-ve-suc-khoe-tu-ben-trong', '<div>\r\n    <p><b>Lễ ra mắt cuốn sách \'Dưỡng sinh phân tử\' (Nhà xuất bản Thanh Niên) của tác giả GS.TSKH Lê Đình Phái vừa diễn ra tại Hà Nội.</b></p>\r\n    <p>GS.TSKH Lê Đình Phái từ nhỏ rất hay ốm. Cuốn sách là kết quả nghiên cứu từ nhiều năm của vị giáo sư gần 90 tuổi từ thực tế bản thân.</p>\r\n    <p>“Tôi muốn tìm một phương pháp giữ gìn sức khỏe, từ đó tìm hiểu những phương pháp dưỡng sinh từ hóa sinh, kết hợp với dinh dưỡng học hiện đại để cho ra những cách thức giữ sức khỏe phù hợp nhất\", GS.TSKH Lê Đình Phái chia sẻ.</p>\r\n    <img src=\"https://static-images.vnncdn.net/files/publish/2024/1/26/af0i0404-777.jpg?width=768&s=4lpfTvsx91uyOMTXEkdplg\" style=\"max-width: 800px; align-items: center;\">\r\n    <br>\r\n    <p>Dưỡng sinh phân tử là phép chăm sóc sức khỏe phi truyền thống vì nó quan tâm bảo vệ sự sống đến tận cùng, cụ thể là bảo vệ các phân tử enzyme và protein của các màng nguyên sinh chất, màng nhân và màng ty thể các kháng thể và các hormone protein... bằng cách hạn chế tác hại thường trực của gốc acid, gốc tự do và các ion kim loại nặng.</p>\r\n    <p>Nội dung cuốn sách đề cập đến 2 vấn đề chính gồm: Đề xuất nguyên lý dưỡng sinh căn cứ trên nền tảng phân tử của sự sống và phát hiện con đường phi truyền thống để khai phá các tư tưởng tinh hoa về y học của người Việt trong các chữ Nôm.</p>\r\n    <img src=\"https://static-images.vnncdn.net/files/publish/2024/1/26/w-z5105238256252-d86dc92f3862413465e48689169fc7c4-1-778.jpg?width=768&s=pRdaDmpiI8m5T2id4Q_8lw\" style=\"max-width: 800px; align-items: center;\">\r\n    <p>Cơ sở tư tưởng của Dưỡng sinh phân tử được bắt nguồn từ nghĩa lý và triết lý, đến từ hai chữ Nôm là chữ DƯỠNG và chữ SINH. Sự phá vỡ cấu trúc các nét của hai chữ trên đã cho tác giả phát hiện được bốn viên ngọc quý. Đó cũng chính là “bảo bối” để duy trì, bảo vệ sự sống của con người gồm: dinh dưỡng, cách sống, môi trường, tâm trí.</p>\r\n\r\n</div>', 'post-6.jpg', 'post', NULL, '2024-04-19 17:33:34', 1, NULL, 1, 1);
@@ -393,10 +393,10 @@ INSERT INTO `2122110588_post` (`id`, `topic_id`, `title`, `slug`, `detail`, `ima
 -- --------------------------------------------------------
 
 --
--- Table structure for table `2122110588_product`
+-- Table structure for table `product`
 --
 
-CREATE TABLE `2122110588_product` (
+CREATE TABLE `product` (
   `id` int UNSIGNED NOT NULL,
   `category_id` int UNSIGNED NOT NULL,
   `brand_id` int UNSIGNED NOT NULL,
@@ -418,10 +418,10 @@ CREATE TABLE `2122110588_product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
--- Dumping data for table `2122110588_product`
+-- Dumping data for table `product`
 --
 
-INSERT INTO `2122110588_product` (`id`, `category_id`, `brand_id`, `name`, `slug`, `price`, `pricesale`, `image`, `image2`, `image3`, `qty`, `detail`, `description`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`) VALUES
+INSERT INTO `product` (`id`, `category_id`, `brand_id`, `name`, `slug`, `price`, `pricesale`, `image`, `image2`, `image3`, `qty`, `detail`, `description`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`) VALUES
 (1, 1, 1, 'Nhà giả kim (2024)', 'nha-gia-kim-2024', 100000.00, 40000.000, 'tieu-thuyet-1.jpg', 'tieu-thuyet-1_2.jpg', 'tieu-thuyet-1_3.jpg', 1, 'tiểu thuyết được xuất bản lần đầu ở Brasil ', 'tiểu thuyết được xuất bản lần đầu ở Brasil ', '2024-01-09 13:50:32', 0, '2024-05-02 15:21:51', 1, 1),
 (2, 1, 1, 'Cây Cam Ngọt Của Tôi', 'cay-cam-ngot-cua-toi', 100000.00, 50000.000, 'tieu-thuyet-2.jpg', 'tieu-thuyet-2_1.jpg', NULL, 1, 'Công ty phát hành Nhã Nam\r\nKích thước 14 x 20.5 cm\r\nSố trang 244\r\nNhà Xuất Bản Hội Nhà Văn', 'Công ty phát hành Nhã Nam\r\nKích thước 14 x 20.5 cm\r\nSố trang 244\r\nNhà Xuất Bản Hội Nhà Văn', '2024-01-09 13:54:14', 0, '2024-01-15 15:14:11', 1, 1),
 (3, 5, 1, 'Arya Bàn Bên Thỉnh Thoảng Lại Trêu Ghẹo Tôi Bằng Tiếng Nga', 'arya-san', 95000.00, 80750.000, 'tieu-thuyet-6.jpg', '', NULL, 20, 'Arya Bàn Bên Thỉnh Thoảng Lại Trêu Ghẹo Tôi Bằng Tiếng Nga', 'Arya Bàn Bên Thỉnh Thoảng Lại Trêu Ghẹo Tôi Bằng Tiếng Nga', '2024-01-15 15:05:56', 1, '2024-01-27 09:48:16', 1, 1),
@@ -465,10 +465,10 @@ INSERT INTO `2122110588_product` (`id`, `category_id`, `brand_id`, `name`, `slug
 -- --------------------------------------------------------
 
 --
--- Table structure for table `2122110588_topic`
+-- Table structure for table `topic`
 --
 
-CREATE TABLE `2122110588_topic` (
+CREATE TABLE `topic` (
   `id` int UNSIGNED NOT NULL COMMENT 'Mã chủ đề',
   `name` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL COMMENT 'Tên chủ đề',
   `slug` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL COMMENT 'Slug tên chủ đề',
@@ -482,10 +482,10 @@ CREATE TABLE `2122110588_topic` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
--- Dumping data for table `2122110588_topic`
+-- Dumping data for table `topic`
 --
 
-INSERT INTO `2122110588_topic` (`id`, `name`, `slug`, `sort_order`, `description`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`) VALUES
+INSERT INTO `topic` (`id`, `name`, `slug`, `sort_order`, `description`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`) VALUES
 (1, 'Tin tức', 'tin-tuc', 1, 'Từ khóa SEO', '2020-07-03 16:14:39', 1, '2020-07-03 16:14:39', 1, 1),
 (2, 'Dịch vụ', 'dich-vu', 2, 'Từ khóa SEO', '2020-07-03 16:14:39', 1, '2020-07-03 16:14:39', 1, 1),
 (3, 'ádsxcxc', 'adsxcxc', 0, 'dsadasx', '2022-09-01 14:44:20', 1, '2022-09-01 14:46:30', 1, 0),
@@ -494,10 +494,10 @@ INSERT INTO `2122110588_topic` (`id`, `name`, `slug`, `sort_order`, `description
 -- --------------------------------------------------------
 
 --
--- Table structure for table `2122110588_user`
+-- Table structure for table `user`
 --
 
-CREATE TABLE `2122110588_user` (
+CREATE TABLE `user` (
   `id` int UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
@@ -516,10 +516,10 @@ CREATE TABLE `2122110588_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
--- Dumping data for table `2122110588_user`
+-- Dumping data for table `user`
 --
 
-INSERT INTO `2122110588_user` (`id`, `name`, `email`, `gender`, `phone`, `username`, `password`, `address`, `image`, `roles`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`) VALUES
+INSERT INTO `user` (`id`, `name`, `email`, `gender`, `phone`, `username`, `password`, `address`, `image`, `roles`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`) VALUES
 (1, 'Trần Đức Khánh ', 'karhacter@gmail.com', 0, '01000004', 'admin', 'f8be6395feef6a5a26168beb782bd7204ec095ad', '8 Dương văn cam', 'karhacter.jpg', 'admin', '2024-01-12 05:17:01', 1, '2024-01-26 06:57:32', 1, 1),
 (2, 'Lê Minh Tuấn', 'minhtuan04042004@gmail.com', 0, '0797044165', 'leminhtuan123', '8c73f5147184f5a1975dc9c2ce8a5dad7ef16693', '55/13 lò lu', 'tuan.jpg', 'customer', '2024-01-25 11:33:40', 1, '2024-01-27 05:15:38', 1, 1),
 (13, 'Thế giới', 'khanhduc392@gmail.com', 1, '0378173109', 'asd', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '88 duong van cam', NULL, 'customer', '2024-01-26 05:37:07', 1, '2024-01-27 05:15:37', 1, 1),
@@ -532,69 +532,69 @@ INSERT INTO `2122110588_user` (`id`, `name`, `email`, `gender`, `phone`, `userna
 --
 
 --
--- Indexes for table `2122110588_banner`
+-- Indexes for table `banner`
 --
-ALTER TABLE `2122110588_banner`
+ALTER TABLE `banner`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `2122110588_brand`
+-- Indexes for table `brand`
 --
-ALTER TABLE `2122110588_brand`
+ALTER TABLE `brand`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `2122110588_category`
+-- Indexes for table `category`
 --
-ALTER TABLE `2122110588_category`
+ALTER TABLE `category`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `2122110588_contact`
+-- Indexes for table `contact`
 --
-ALTER TABLE `2122110588_contact`
+ALTER TABLE `contact`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `2122110588_menu`
+-- Indexes for table `menu`
 --
-ALTER TABLE `2122110588_menu`
+ALTER TABLE `menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `2122110588_order`
+-- Indexes for table `order`
 --
-ALTER TABLE `2122110588_order`
+ALTER TABLE `order`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `2122110588_orderdetail`
+-- Indexes for table `orderdetail`
 --
-ALTER TABLE `2122110588_orderdetail`
+ALTER TABLE `orderdetail`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `2122110588_post`
+-- Indexes for table `post`
 --
-ALTER TABLE `2122110588_post`
+ALTER TABLE `post`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `2122110588_product`
+-- Indexes for table `product`
 --
-ALTER TABLE `2122110588_product`
+ALTER TABLE `product`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `2122110588_topic`
+-- Indexes for table `topic`
 --
-ALTER TABLE `2122110588_topic`
+ALTER TABLE `topic`
   ADD PRIMARY KEY (`id`) USING BTREE;
 
 --
--- Indexes for table `2122110588_user`
+-- Indexes for table `user`
 --
-ALTER TABLE `2122110588_user`
+ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -602,69 +602,69 @@ ALTER TABLE `2122110588_user`
 --
 
 --
--- AUTO_INCREMENT for table `2122110588_banner`
+-- AUTO_INCREMENT for table `banner`
 --
-ALTER TABLE `2122110588_banner`
+ALTER TABLE `banner`
   MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
--- AUTO_INCREMENT for table `2122110588_brand`
+-- AUTO_INCREMENT for table `brand`
 --
-ALTER TABLE `2122110588_brand`
+ALTER TABLE `brand`
   MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
--- AUTO_INCREMENT for table `2122110588_category`
+-- AUTO_INCREMENT for table `category`
 --
-ALTER TABLE `2122110588_category`
+ALTER TABLE `category`
   MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'AUTO_INCREMENT', AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT for table `2122110588_contact`
+-- AUTO_INCREMENT for table `contact`
 --
-ALTER TABLE `2122110588_contact`
+ALTER TABLE `contact`
   MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `2122110588_menu`
+-- AUTO_INCREMENT for table `menu`
 --
-ALTER TABLE `2122110588_menu`
+ALTER TABLE `menu`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=421;
 
 --
--- AUTO_INCREMENT for table `2122110588_order`
+-- AUTO_INCREMENT for table `order`
 --
-ALTER TABLE `2122110588_order`
+ALTER TABLE `order`
   MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
 
 --
--- AUTO_INCREMENT for table `2122110588_orderdetail`
+-- AUTO_INCREMENT for table `orderdetail`
 --
-ALTER TABLE `2122110588_orderdetail`
+ALTER TABLE `orderdetail`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
--- AUTO_INCREMENT for table `2122110588_post`
+-- AUTO_INCREMENT for table `post`
 --
-ALTER TABLE `2122110588_post`
+ALTER TABLE `post`
   MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
--- AUTO_INCREMENT for table `2122110588_product`
+-- AUTO_INCREMENT for table `product`
 --
-ALTER TABLE `2122110588_product`
+ALTER TABLE `product`
   MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
--- AUTO_INCREMENT for table `2122110588_topic`
+-- AUTO_INCREMENT for table `topic`
 --
-ALTER TABLE `2122110588_topic`
+ALTER TABLE `topic`
   MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Mã chủ đề', AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `2122110588_user`
+-- AUTO_INCREMENT for table `user`
 --
-ALTER TABLE `2122110588_user`
+ALTER TABLE `user`
   MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 COMMIT;
 

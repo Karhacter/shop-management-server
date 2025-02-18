@@ -2,7 +2,7 @@ const conn = require("../configs/dbmysql");
 
 const Topic = {
   getAll: (result) => {
-    conn.query("SELECT * FROM 2122110588_topic", (err, topic, fields) => {
+    conn.query("SELECT * FROM topic", (err, topic, fields) => {
       if (err) {
         result(null);
       } else {
@@ -11,7 +11,7 @@ const Topic = {
     });
   },
   getList: async (limit, offset, mycallback) => {
-    const sql = `SELECT * FROM 2122110588_topic WHERE status='1' ORDER BY created_at DESC LIMIT ${limit} OFFSET ${offset}`;
+    const sql = `SELECT * FROM topic WHERE status='1' ORDER BY created_at DESC LIMIT ${limit} OFFSET ${offset}`;
     await conn.query(sql, function (err, topics) {
       if (err) {
         mycallback(null);
@@ -21,7 +21,7 @@ const Topic = {
     });
   },
   show: (id, result) => {
-    const sql = `SELECT * FROM 2122110588_topic WHERE id='${id}' LIMIT 1`;
+    const sql = `SELECT * FROM topic WHERE id='${id}' LIMIT 1`;
     conn.query(sql, function (err, topic, fields) {
       if (err) {
         result(null);
@@ -31,7 +31,7 @@ const Topic = {
     });
   },
   store: (topic, mycallback) => {
-    var sql = "INSERT INTO 2122110588_topic SET ?";
+    var sql = "INSERT INTO topic SET ?";
     conn.query(sql, topic, function (err, result) {
       if (err) {
         mycallback(err);
@@ -41,7 +41,7 @@ const Topic = {
     });
   },
   edit: (topic, id, mycallback) => {
-    var sql = `UPDATE 2122110588_topic SET ? WHERE id = '${id}'`;
+    var sql = `UPDATE topic SET ? WHERE id = '${id}'`;
     conn.query(sql, topic, function (err, result) {
       if (err) {
         mycallback(err);
@@ -51,7 +51,7 @@ const Topic = {
     });
   },
   remove: (id, mycallback) => {
-    var sql = `DELETE FROM 2122110588_topic WHERE id='${id}'`;
+    var sql = `DELETE FROM topic WHERE id='${id}'`;
     conn.query(sql, function (err, result) {
       if (err) {
         mycallback(err);

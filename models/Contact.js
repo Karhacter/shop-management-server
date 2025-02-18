@@ -2,7 +2,7 @@ const conn = require("../configs/dbmysql");
 
 const Contact = {
   getAll: (result) => {
-    conn.query("SELECT * FROM 2122110588_contact", (err, contact, fields) => {
+    conn.query("SELECT * FROM contact", (err, contact, fields) => {
       if (err) {
         result(null);
       } else {
@@ -11,7 +11,7 @@ const Contact = {
     });
   },
   show: (id, result) => {
-    const sql = `SELECT * FROM 2122110588_contact WHERE id='${id}' LIMIT 1`;
+    const sql = `SELECT * FROM contact WHERE id='${id}' LIMIT 1`;
     conn.query(sql, function (err, contact, fields) {
       if (err) {
         result(null);
@@ -21,7 +21,7 @@ const Contact = {
     });
   },
   store: (contact, mycallback) => {
-    var sql = "INSERT INTO 2122110588_contact SET ?";
+    var sql = "INSERT INTO contact SET ?";
     conn.query(sql, contact, function (err, result) {
       if (err) {
         mycallback(err);
@@ -31,7 +31,7 @@ const Contact = {
     });
   },
   edit: (contact, id, mycallback) => {
-    var sql = `UPDATE 2122110588_contact SET ? WHERE id = '${id}'`;
+    var sql = `UPDATE contact SET ? WHERE id = '${id}'`;
     conn.query(sql, contact, function (err, result) {
       if (err) {
         mycallback(err);
@@ -41,7 +41,7 @@ const Contact = {
     });
   },
   remove: (id, mycallback) => {
-    var sql = `DELETE FROM 2122110588_contact WHERE id='${id}'`;
+    var sql = `DELETE FROM contact WHERE id='${id}'`;
     conn.query(sql, function (err, result) {
       if (err) {
         mycallback(err);

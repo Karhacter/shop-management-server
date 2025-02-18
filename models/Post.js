@@ -2,7 +2,7 @@ const conn = require("../configs/dbmysql");
 
 const Post = {
   getAll: (result) => {
-    conn.query("SELECT * FROM 2122110588_post", (err, post, fields) => {
+    conn.query("SELECT * FROM post", (err, post, fields) => {
       if (err) {
         result(null);
       } else {
@@ -11,7 +11,7 @@ const Post = {
     });
   },
   show: (id, result) => {
-    const sql = `SELECT * FROM 2122110588_post WHERE id='${id}' LIMIT 1`;
+    const sql = `SELECT * FROM post WHERE id='${id}' LIMIT 1`;
     conn.query(sql, function (err, post, fields) {
       if (err) {
         result(null);
@@ -21,7 +21,7 @@ const Post = {
     });
   },
   store: (post, mycallback) => {
-    var sql = "INSERT INTO 2122110588_post SET ?";
+    var sql = "INSERT INTO post SET ?";
     conn.query(sql, post, function (err, result) {
       if (err) {
         mycallback(err);
@@ -31,7 +31,7 @@ const Post = {
     });
   },
   edit: (post, id, mycallback) => {
-    var sql = `UPDATE 2122110588_post SET ? WHERE id = '${id}'`;
+    var sql = `UPDATE post SET ? WHERE id = '${id}'`;
     conn.query(sql, post, function (err, result) {
       if (err) {
         mycallback(err);
@@ -41,7 +41,7 @@ const Post = {
     });
   },
   remove: (id, mycallback) => {
-    var sql = `DELETE FROM 2122110588_post WHERE id='${id}'`;
+    var sql = `DELETE FROM post WHERE id='${id}'`;
     conn.query(sql, function (err, result) {
       if (err) {
         mycallback(err);
@@ -52,7 +52,7 @@ const Post = {
   },
   getList: (result) => {
     conn.query(
-      "SELECT * FROM 2122110588_post WHERE type = 'post' ORDER BY created_at DESC",
+      "SELECT * FROM post WHERE type = 'post' ORDER BY created_at DESC",
       (err, post, fields) => {
         if (err) {
           result(null);
@@ -63,7 +63,7 @@ const Post = {
     );
   },
   getBySlug: async (slug, mycallback) => {
-    const sql = `SELECT * FROM 2122110588_post WHERE slug='${slug}' LIMIT 1`;
+    const sql = `SELECT * FROM post WHERE slug='${slug}' LIMIT 1`;
     await conn.query(sql, function (err, post) {
       if (err) {
         mycallback(err);
@@ -73,7 +73,7 @@ const Post = {
     });
   },
   getListOther: async (topic_id, id, limit, mycallback) => {
-    const sql = `SELECT * FROM 2122110588_post WHERE  topic_id = ${topic_id} AND status='1' AND id!='${id}'  ORDER BY created_at DESC LIMIT ${limit}`;
+    const sql = `SELECT * FROM post WHERE  topic_id = ${topic_id} AND status='1' AND id!='${id}'  ORDER BY created_at DESC LIMIT ${limit}`;
     // console.log(sql);
     await conn.query(sql, function (err, posts) {
       if (err) {
@@ -84,7 +84,7 @@ const Post = {
     });
   },
   getListNew: (limit, mycallback) => {
-    const sql = `SELECT * FROM 2122110588_post WHERE status='1' and  type = 'post' ORDER BY created_at DESC LIMIT ${limit}`;
+    const sql = `SELECT * FROM post WHERE status='1' and  type = 'post' ORDER BY created_at DESC LIMIT ${limit}`;
     conn.query(sql, function (err, posts) {
       if (err) {
         mycallback(null);

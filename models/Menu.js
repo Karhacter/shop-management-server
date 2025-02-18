@@ -3,7 +3,7 @@ const conn = require("../configs/dbmysql");
 const Menu = {
   //
   getAll: (result) => {
-    conn.query("SELECT * FROM 2122110588_menu", (err, menu, fields) => {
+    conn.query("SELECT * FROM menu", (err, menu, fields) => {
       if (err) {
         result(null);
       } else {
@@ -12,7 +12,7 @@ const Menu = {
     });
   },
   show: (id, result) => {
-    const sql = `SELECT * FROM 2122110588_menu WHERE id='${id}' LIMIT 1`;
+    const sql = `SELECT * FROM menu WHERE id='${id}' LIMIT 1`;
     conn.query(sql, function (err, menu, fields) {
       if (err) {
         result(null);
@@ -22,7 +22,7 @@ const Menu = {
     });
   },
   store: (menu, mycallback) => {
-    var sql = "INSERT INTO 2122110588_menu SET ?";
+    var sql = "INSERT INTO menu SET ?";
     conn.query(sql, menu, function (err, result) {
       if (err) {
         mycallback(err);
@@ -32,7 +32,7 @@ const Menu = {
     });
   },
   edit: (menu, id, mycallback) => {
-    var sql = `UPDATE 2122110588_menu SET ? WHERE id = '${id}'`;
+    var sql = `UPDATE menu SET ? WHERE id = '${id}'`;
     conn.query(sql, menu, function (err, result) {
       if (err) {
         mycallback(err);
@@ -42,7 +42,7 @@ const Menu = {
     });
   },
   delete: (id, mycallback) => {
-    var sql = `DELETE FROM 2122110588_menu WHERE id='${id}'`;
+    var sql = `DELETE FROM menu WHERE id='${id}'`;
     conn.query(sql, function (err, result) {
       if (err) {
         mycallback(null);
@@ -52,7 +52,7 @@ const Menu = {
     });
   },
   getList: (parentid, limit, mycallback) => {
-    const sql = `SELECT * FROM 2122110588_menu WHERE parent_id ='${parentid}' LIMIT ${limit}`;
+    const sql = `SELECT * FROM menu WHERE parent_id ='${parentid}' LIMIT ${limit}`;
     conn.query(sql, function (err, menu) {
       if (err) {
         mycallback(null);

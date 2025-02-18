@@ -2,7 +2,7 @@ const conn = require("../configs/dbmysql");
 
 const Order = {
   getAll: (result) => {
-    conn.query("SELECT * FROM 2122110588_order", (err, order, fields) => {
+    conn.query("SELECT * FROM order", (err, order, fields) => {
       if (err) {
         result(null);
       } else {
@@ -11,7 +11,7 @@ const Order = {
     });
   },
   show: (id, result) => {
-    const sql = `SELECT * FROM 2122110588_order WHERE id='${id}' LIMIT 1`;
+    const sql = `SELECT * FROM order WHERE id='${id}' LIMIT 1`;
     conn.query(sql, function (err, order, fields) {
       if (err) {
         result(null);
@@ -21,7 +21,7 @@ const Order = {
     });
   },
   store: (order, mycallback) => {
-    var sql = "INSERT INTO 2122110588_order SET ?";
+    var sql = "INSERT INTO order SET ?";
     conn.query(sql, order, function (err, result) {
       if (err) {
         mycallback(err);
@@ -31,7 +31,7 @@ const Order = {
     });
   },
   edit: (order, id, mycallback) => {
-    var sql = `UPDATE 2122110588_order SET ? WHERE id = '${id}'`;
+    var sql = `UPDATE order SET ? WHERE id = '${id}'`;
     conn.query(sql, order, function (err, result) {
       if (err) {
         mycallback(err);
@@ -41,7 +41,7 @@ const Order = {
     });
   },
   remove: (id, mycallback) => {
-    var sql = `DELETE FROM 2122110588_order WHERE id='${id}'`;
+    var sql = `DELETE FROM order WHERE id='${id}'`;
     conn.query(sql, function (err, result) {
       if (err) {
         mycallback(err);
