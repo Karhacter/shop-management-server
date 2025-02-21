@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: May 06, 2024 at 03:21 PM
--- Server version: 8.0.30
--- PHP Version: 8.1.10
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th2 21, 2025 lúc 05:14 AM
+-- Phiên bản máy phục vụ: 10.4.32-MariaDB
+-- Phiên bản PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,32 +18,32 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `0588_duckhanh`
+-- Cơ sở dữ liệu: `shop_dbase`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `banner`
+-- Cấu trúc bảng cho bảng `banner`
 --
 
 CREATE TABLE `banner` (
-  `id` int UNSIGNED NOT NULL,
-  `name` varchar(1000) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `link` varchar(1000) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `sort_order` int UNSIGNED NOT NULL DEFAULT '1',
-  `description` varchar(1000) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `position` varchar(50) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `image` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(1000) NOT NULL,
+  `link` varchar(1000) NOT NULL,
+  `sort_order` int(10) UNSIGNED NOT NULL DEFAULT 1,
+  `description` varchar(1000) DEFAULT NULL,
+  `position` varchar(50) DEFAULT NULL,
+  `image` varchar(255) NOT NULL,
   `created_at` datetime NOT NULL,
-  `created_by` int UNSIGNED NOT NULL,
+  `created_by` int(10) UNSIGNED NOT NULL,
   `updated_at` datetime DEFAULT NULL,
-  `updated_by` int UNSIGNED DEFAULT NULL,
-  `status` tinyint UNSIGNED NOT NULL DEFAULT '2'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+  `updated_by` int(10) UNSIGNED DEFAULT NULL,
+  `status` tinyint(3) UNSIGNED NOT NULL DEFAULT 2
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `banner`
+-- Đang đổ dữ liệu cho bảng `banner`
 --
 
 INSERT INTO `banner` (`id`, `name`, `link`, `sort_order`, `description`, `position`, `image`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`) VALUES
@@ -55,25 +55,25 @@ INSERT INTO `banner` (`id`, `name`, `link`, `sort_order`, `description`, `positi
 -- --------------------------------------------------------
 
 --
--- Table structure for table `brand`
+-- Cấu trúc bảng cho bảng `brand`
 --
 
 CREATE TABLE `brand` (
-  `id` int UNSIGNED NOT NULL,
-  `name` varchar(1000) COLLATE utf8mb3_unicode_ci NOT NULL COMMENT 'Not Null',
-  `slug` varchar(1000) COLLATE utf8mb3_unicode_ci NOT NULL COMMENT 'Not Null',
-  `image` varchar(1000) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `sort_order` int UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Default 0',
-  `description` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(1000) NOT NULL COMMENT 'Not Null',
+  `slug` varchar(1000) NOT NULL COMMENT 'Not Null',
+  `image` varchar(1000) DEFAULT NULL,
+  `sort_order` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Default 0',
+  `description` varchar(255) DEFAULT NULL,
   `created_at` datetime NOT NULL COMMENT 'Not Null',
-  `created_by` int UNSIGNED NOT NULL COMMENT 'Not Null',
+  `created_by` int(10) UNSIGNED NOT NULL COMMENT 'Not Null',
   `updated_at` datetime DEFAULT NULL,
-  `updated_by` int UNSIGNED DEFAULT NULL,
-  `status` tinyint UNSIGNED NOT NULL DEFAULT '2' COMMENT 'Default 2'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+  `updated_by` int(10) UNSIGNED DEFAULT NULL,
+  `status` tinyint(3) UNSIGNED NOT NULL DEFAULT 2 COMMENT 'Default 2'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `brand`
+-- Đang đổ dữ liệu cho bảng `brand`
 --
 
 INSERT INTO `brand` (`id`, `name`, `slug`, `image`, `sort_order`, `description`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`) VALUES
@@ -91,26 +91,26 @@ INSERT INTO `brand` (`id`, `name`, `slug`, `image`, `sort_order`, `description`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `category`
+-- Cấu trúc bảng cho bảng `category`
 --
 
 CREATE TABLE `category` (
-  `id` int UNSIGNED NOT NULL COMMENT 'AUTO_INCREMENT',
-  `name` varchar(1000) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `slug` varchar(1000) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `image` varchar(1000) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `parent_id` int UNSIGNED NOT NULL DEFAULT '0',
-  `sort_order` int UNSIGNED DEFAULT NULL,
-  `description` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `id` int(10) UNSIGNED NOT NULL COMMENT 'AUTO_INCREMENT',
+  `name` varchar(1000) NOT NULL,
+  `slug` varchar(1000) NOT NULL,
+  `image` varchar(1000) DEFAULT NULL,
+  `parent_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
+  `sort_order` int(10) UNSIGNED DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
   `created_at` datetime NOT NULL,
-  `created_by` int UNSIGNED NOT NULL,
+  `created_by` int(10) UNSIGNED NOT NULL,
   `updated_at` datetime DEFAULT NULL,
-  `updated_by` int UNSIGNED DEFAULT NULL,
-  `status` tinyint UNSIGNED NOT NULL DEFAULT '2'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+  `updated_by` int(10) UNSIGNED DEFAULT NULL,
+  `status` tinyint(3) UNSIGNED NOT NULL DEFAULT 2
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `category`
+-- Đang đổ dữ liệu cho bảng `category`
 --
 
 INSERT INTO `category` (`id`, `name`, `slug`, `image`, `parent_id`, `sort_order`, `description`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`) VALUES
@@ -127,27 +127,27 @@ INSERT INTO `category` (`id`, `name`, `slug`, `image`, `parent_id`, `sort_order`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contact`
+-- Cấu trúc bảng cho bảng `contact`
 --
 
 CREATE TABLE `contact` (
-  `id` int UNSIGNED NOT NULL,
-  `user_id` int UNSIGNED DEFAULT NULL,
-  `name` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `phone` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `title` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `content` mediumtext COLLATE utf8mb3_unicode_ci NOT NULL,
-  `reply_id` int UNSIGNED NOT NULL DEFAULT '0',
+  `id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(10) UNSIGNED DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `content` mediumtext NOT NULL,
+  `reply_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `created_at` datetime NOT NULL,
-  `created_by` int UNSIGNED NOT NULL,
+  `created_by` int(10) UNSIGNED NOT NULL,
   `updated_at` datetime DEFAULT NULL,
-  `updated_by` int UNSIGNED DEFAULT NULL,
-  `status` tinyint NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+  `updated_by` int(10) UNSIGNED DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `contact`
+-- Đang đổ dữ liệu cho bảng `contact`
 --
 
 INSERT INTO `contact` (`id`, `user_id`, `name`, `email`, `phone`, `title`, `content`, `reply_id`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`) VALUES
@@ -159,73 +159,73 @@ INSERT INTO `contact` (`id`, `user_id`, `name`, `email`, `phone`, `title`, `cont
 -- --------------------------------------------------------
 
 --
--- Table structure for table `menu`
+-- Cấu trúc bảng cho bảng `menu`
 --
 
 CREATE TABLE `menu` (
-  `id` int NOT NULL,
-  `name` varchar(1000) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `link` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `table_id` int UNSIGNED DEFAULT NULL,
-  `sort_order` int NOT NULL,
-  `position` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `type` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `parent_id` int NOT NULL,
+  `id` int(11) NOT NULL,
+  `name` varchar(1000) NOT NULL,
+  `link` varchar(255) NOT NULL,
+  `table_id` int(10) UNSIGNED DEFAULT NULL,
+  `sort_order` int(11) NOT NULL,
+  `position` varchar(255) NOT NULL,
+  `type` varchar(255) NOT NULL,
+  `parent_id` int(11) NOT NULL,
   `created_at` datetime NOT NULL,
-  `created_by` int UNSIGNED NOT NULL,
+  `created_by` int(10) UNSIGNED NOT NULL,
   `updated_at` datetime DEFAULT NULL,
-  `updated_by` int UNSIGNED DEFAULT NULL,
-  `status` tinyint UNSIGNED NOT NULL DEFAULT '2'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+  `updated_by` int(10) UNSIGNED DEFAULT NULL,
+  `status` tinyint(3) UNSIGNED NOT NULL DEFAULT 2
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `menu`
+-- Đang đổ dữ liệu cho bảng `menu`
 --
 
 INSERT INTO `menu` (`id`, `name`, `link`, `table_id`, `sort_order`, `position`, `type`, `parent_id`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`) VALUES
-(1, 'Trang chủ', 'http://localhost/Litenary_Oasis/index.php', 0, 2, 'mainmenu', 'custom', 0, '2024-01-12 12:11:21', 1, NULL, 1, 1),
-(2, 'Giới thiệu', 'http://localhost/Litenary_Oasis/index.php?opt=page&cat=gioi-thieu', 39, 2, 'mainmenu', 'page', 0, '2024-01-12 12:15:16', 1, NULL, 1, 1),
-(3, 'Bài viết', 'http://localhost/Litenary_Oasis/index.php?opt=post_topic', 40, 6, 'mainmenu', 'page', 0, '2024-01-12 14:56:55', 1, NULL, 1, 1),
-(9, 'Tiểu thuyết', 'http://localhost/Litenary_Oasis/index.php?opt=product&cat=tieu-thuyet', 14, 7, 'mainmenu', 'category', 14, '2024-01-12 14:54:50', 1, NULL, 1, 1),
-(10, 'Tâm lý', 'http://localhost/Litenary_Oasis/index.php?opt=product&cat=tam-ly', 6, 13, 'mainmenu', 'category', 14, '2024-01-12 14:53:47', 1, NULL, 1, 1),
-(11, 'Tiểu thuyết', 'http://localhost/Litenary_Oasis/index.php?opt=product&cat=tam-ly', 5, 12, 'mainmenu', 'category', 15, '2024-01-12 14:51:22', 1, NULL, 1, 1),
-(12, 'Ngôn tình', 'http://localhost/Litenary_Oasis/index.php?opt=product&cat=ngon-tinh', 4, 11, 'mainmenu', 'category', 15, '2024-01-12 14:38:12', 1, NULL, 1, 1),
-(13, 'Light novel', 'http://localhost/Litenary_Oasis/index.php?opt=product&cat=light-novel', 3, 10, 'mainmenu', 'category', 15, '2024-01-12 12:33:45', 1, NULL, 1, 1),
-(14, 'Danh Mục', 'http://localhost:3000/san-pham/the-loai/truyen-tranh', 2, 4, 'mainmenu', 'category', 0, '2024-01-12 14:24:56', 1, '2024-01-27 04:29:13', 1, 1),
-(15, 'Văn học', 'http://localhost:3000/san-pham/the-loai/van-hoc', 1, 5, 'mainmenu', 'category', 0, '2024-01-12 12:27:51', 1, NULL, 1, 1),
-(16, 'Giới thiệu', 'http://localhost/Litenary_Oasis/index.php?opt=page&cat=gioi-thieu', 39, 1, 'footermenu', 'page', 0, '2024-01-12 15:01:08', 1, NULL, 1, 1),
-(17, 'Chính Sách Hoàn Tiền', 'index.php?opt=page&cat=chinh-sach-hoan-tien', 1, 38, 'footermenu', 'page', 0, '2024-01-12 15:01:55', 1, NULL, 1, 1),
-(18, 'Chính sách bảo hành', 'index.php?opt=page&cat=chinh-sach-bao-hanh', 37, 2, 'footermenu', 'page', 0, '2024-01-12 15:02:45', 1, NULL, 1, 1),
-(19, 'Chính sách đổi hàng', 'index.php?opt=page&cat=chinh-sach-doi-hang', 36, 2, 'footermenu', 'page', 0, '2024-01-12 15:03:34', 1, NULL, 1, 1),
-(414, 'Sản phẩm', 'http://localhost/Litenary_Oasis/index.php?opt=product', 41, 3, 'mainmenu', 'page', 0, '2024-01-12 12:15:16', 1, NULL, 1, 1),
-(416, 'Liên hệ', 'http://localhost/Litenary_Oasis/index.php?opt=contact', 42, 7, 'mainmenu', 'page', 0, '2024-01-12 12:15:16', 1, NULL, 1, 1),
-(417, ' Phương thức thanh toán', 'index.php?opt=page&cat=chinh-sach-hoan-tien', 1, 38, 'footermenu', 'page', 0, '2024-01-12 15:01:55', 1, NULL, 1, 1),
-(418, 'Kinh tế', 'http://localhost/Litenary_Oasis/index.php?opt=product&cat=kinh-te', 6, 13, 'mainmenu', 'category', 14, '2024-01-12 14:53:47', 1, NULL, 1, 1),
-(419, 'Truyện tranh', 'http://localhost/Litenary_Oasis/index.php?opt=product&cat=truyen-tranh', 5, 12, 'mainmenu', 'category', 14, '2024-01-12 14:51:22', 1, NULL, 1, 1),
-(420, 'Hệ thống ', 'http://localhost/Litenary_Oasis/admin', 42, 8, 'mainmenu', 'page', 0, '2024-01-12 12:15:16', 1, NULL, 1, 1);
+(1, 'Trang chủ', 'http://localhost:3000/', 0, 2, 'mainmenu', 'custom', 0, '2024-01-12 12:11:21', 1, NULL, 1, 1),
+(2, 'Giới thiệu', 'http://localhost:3000/gioi-thieu', 39, 2, 'mainmenu', 'page', 0, '2024-01-12 12:15:16', 1, NULL, 1, 1),
+(3, 'Bài viết', 'http://localhost:3000/bai-viet', 40, 6, 'mainmenu', 'page', 0, '2024-01-12 14:56:55', 1, NULL, 1, 1),
+(9, 'Tiểu thuyết', 'http://localhost:3000/san-pham/the-loai/tieu-thuyet', 14, 7, 'mainmenu', 'category', 14, '2024-01-12 14:54:50', 1, NULL, 1, 1),
+(10, 'Tâm lý', 'http://localhost:3000/san-pham/the-loai/tam-ly', 6, 13, 'mainmenu', 'category', 14, '2024-01-12 14:53:47', 1, NULL, 1, 1),
+(11, 'Tiểu thuyết', 'http://localhost:3000/san-pham/the-loai/tieu-thuyet', 5, 12, 'mainmenu', 'category', 15, '2024-01-12 14:51:22', 1, NULL, 1, 1),
+(12, 'Ngôn tình', 'http://localhost:3000/san-pham/the-loai/ngon-tinh', 4, 11, 'mainmenu', 'category', 15, '2024-01-12 14:38:12', 1, NULL, 1, 1),
+(13, 'Light novel', 'http://localhost:3000/san-pham/the-loai/light-novel', 3, 10, 'mainmenu', 'category', 15, '2024-01-12 12:33:45', 1, NULL, 1, 1),
+(14, 'Danh Mục', 'http://localhost:3000:3000/san-pham/the-loai/truyen-tranh', 2, 4, 'mainmenu', 'category', 0, '2024-01-12 14:24:56', 1, '2024-01-27 04:29:13', 1, 1),
+(15, 'Văn học', 'http://localhost:3000:3000/san-pham/the-loai/van-hoc', 1, 5, 'mainmenu', 'category', 0, '2024-01-12 12:27:51', 1, NULL, 1, 1),
+(16, 'Giới thiệu', 'http://localhost:3000/gioi-thieu', 39, 1, 'footermenu', 'page', 0, '2024-01-12 15:01:08', 1, NULL, 1, 1),
+(17, 'Chính Sách Hoàn Tiền', 'chinh-sach-hoan-tien', 1, 38, 'footermenu', 'page', 0, '2024-01-12 15:01:55', 1, NULL, 1, 1),
+(18, 'Chính sách bảo hành', 'chinh-sach-bao-hanh', 37, 2, 'footermenu', 'page', 0, '2024-01-12 15:02:45', 1, NULL, 1, 1),
+(19, 'Chính sách đổi hàng', 'chinh-sach-doi-hang', 36, 2, 'footermenu', 'page', 0, '2024-01-12 15:03:34', 1, NULL, 1, 1),
+(414, 'Sản phẩm', 'http://localhost:3000/san-pham', 41, 3, 'mainmenu', 'page', 0, '2024-01-12 12:15:16', 1, NULL, 1, 1),
+(416, 'Liên hệ', 'http://localhost:3000/lien-he', 42, 7, 'mainmenu', 'page', 0, '2024-01-12 12:15:16', 1, NULL, 1, 1),
+(417, ' Phương thức thanh toán', 'chinh-sach-hoan-tien', 1, 38, 'footermenu', 'page', 0, '2024-01-12 15:01:55', 1, NULL, 1, 1),
+(418, 'Kinh tế', 'http://localhost:3000/san-pham/the-loai/kinh-te', 6, 13, 'mainmenu', 'category', 14, '2024-01-12 14:53:47', 1, NULL, 1, 1),
+(419, 'Truyện tranh', 'http://localhost:3000/san-pham/the-loai/truyen-tranh', 5, 12, 'mainmenu', 'category', 14, '2024-01-12 14:51:22', 1, NULL, 1, 1),
+(420, 'Hệ thống ', 'http://localhost:3000/admin', 42, 8, 'mainmenu', 'page', 0, '2024-01-12 12:15:16', 1, NULL, 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `order`
+-- Cấu trúc bảng cho bảng `order`
 --
 
 CREATE TABLE `order` (
-  `id` int UNSIGNED NOT NULL,
-  `user_id` int UNSIGNED NOT NULL,
-  `deliveryname` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `deliveryphone` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `deliveryemail` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `deliveryaddress` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `note` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_by` tinyint UNSIGNED DEFAULT NULL,
-  `status` tinyint UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+  `id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `deliveryname` varchar(255) NOT NULL,
+  `deliveryphone` varchar(255) NOT NULL,
+  `deliveryemail` varchar(255) NOT NULL,
+  `deliveryaddress` varchar(255) NOT NULL,
+  `note` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT current_timestamp(),
+  `updated_by` tinyint(3) UNSIGNED DEFAULT NULL,
+  `status` tinyint(3) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `order`
+-- Đang đổ dữ liệu cho bảng `order`
 --
 
 INSERT INTO `order` (`id`, `user_id`, `deliveryname`, `deliveryphone`, `deliveryemail`, `deliveryaddress`, `note`, `created_at`, `updated_at`, `updated_by`, `status`) VALUES
@@ -281,22 +281,22 @@ INSERT INTO `order` (`id`, `user_id`, `deliveryname`, `deliveryphone`, `delivery
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orderdetail`
+-- Cấu trúc bảng cho bảng `orderdetail`
 --
 
 CREATE TABLE `orderdetail` (
-  `id` int NOT NULL,
-  `order_id` int UNSIGNED NOT NULL,
-  `product_id` int UNSIGNED NOT NULL,
+  `id` int(11) NOT NULL,
+  `order_id` int(10) UNSIGNED NOT NULL,
+  `product_id` int(10) UNSIGNED NOT NULL,
   `price` float NOT NULL,
-  `qty` int UNSIGNED NOT NULL,
+  `qty` int(10) UNSIGNED NOT NULL,
   `amount` float NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `orderdetail`
+-- Đang đổ dữ liệu cho bảng `orderdetail`
 --
 
 INSERT INTO `orderdetail` (`id`, `order_id`, `product_id`, `price`, `qty`, `amount`, `created_at`, `updated_at`) VALUES
@@ -353,27 +353,27 @@ INSERT INTO `orderdetail` (`id`, `order_id`, `product_id`, `price`, `qty`, `amou
 -- --------------------------------------------------------
 
 --
--- Table structure for table `post`
+-- Cấu trúc bảng cho bảng `post`
 --
 
 CREATE TABLE `post` (
-  `id` int UNSIGNED NOT NULL,
-  `topic_id` int UNSIGNED DEFAULT NULL,
-  `title` varchar(1000) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `slug` varchar(1000) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `detail` mediumtext COLLATE utf8mb3_unicode_ci NOT NULL,
-  `image` varchar(1000) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `type` varchar(100) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `description` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `id` int(10) UNSIGNED NOT NULL,
+  `topic_id` int(10) UNSIGNED DEFAULT NULL,
+  `title` varchar(1000) NOT NULL,
+  `slug` varchar(1000) NOT NULL,
+  `detail` mediumtext NOT NULL,
+  `image` varchar(1000) NOT NULL,
+  `type` varchar(100) NOT NULL,
+  `description` varchar(255) DEFAULT NULL,
   `created_at` datetime NOT NULL,
-  `created_by` int UNSIGNED NOT NULL,
+  `created_by` int(10) UNSIGNED NOT NULL,
   `updated_at` datetime DEFAULT NULL,
-  `updated_by` int UNSIGNED DEFAULT NULL,
-  `status` tinyint UNSIGNED NOT NULL DEFAULT '2'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+  `updated_by` int(10) UNSIGNED DEFAULT NULL,
+  `status` tinyint(3) UNSIGNED NOT NULL DEFAULT 2
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `post`
+-- Đang đổ dữ liệu cho bảng `post`
 --
 
 INSERT INTO `post` (`id`, `topic_id`, `title`, `slug`, `detail`, `image`, `type`, `description`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`) VALUES
@@ -393,32 +393,32 @@ INSERT INTO `post` (`id`, `topic_id`, `title`, `slug`, `detail`, `image`, `type`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product`
+-- Cấu trúc bảng cho bảng `product`
 --
 
 CREATE TABLE `product` (
-  `id` int UNSIGNED NOT NULL,
-  `category_id` int UNSIGNED NOT NULL,
-  `brand_id` int UNSIGNED NOT NULL,
-  `name` varchar(1000) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `slug` varchar(1000) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL,
+  `category_id` int(10) UNSIGNED NOT NULL,
+  `brand_id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(1000) NOT NULL,
+  `slug` varchar(1000) NOT NULL,
   `price` float(12,2) NOT NULL,
   `pricesale` float(12,3) DEFAULT NULL,
-  `image` varchar(1000) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `image2` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `image3` varchar(1000) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `qty` int UNSIGNED NOT NULL,
-  `detail` mediumtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `description` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `image` varchar(1000) NOT NULL,
+  `image2` varchar(1000) DEFAULT NULL,
+  `image3` varchar(1000) DEFAULT NULL,
+  `qty` int(10) UNSIGNED NOT NULL,
+  `detail` mediumtext NOT NULL,
+  `description` varchar(1000) DEFAULT NULL,
   `created_at` datetime NOT NULL,
-  `created_by` int UNSIGNED NOT NULL,
+  `created_by` int(10) UNSIGNED NOT NULL,
   `updated_at` datetime DEFAULT NULL,
-  `updated_by` int UNSIGNED DEFAULT NULL,
-  `status` tinyint UNSIGNED NOT NULL DEFAULT '2'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+  `updated_by` int(10) UNSIGNED DEFAULT NULL,
+  `status` tinyint(3) UNSIGNED NOT NULL DEFAULT 2
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `product`
+-- Đang đổ dữ liệu cho bảng `product`
 --
 
 INSERT INTO `product` (`id`, `category_id`, `brand_id`, `name`, `slug`, `price`, `pricesale`, `image`, `image2`, `image3`, `qty`, `detail`, `description`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`) VALUES
@@ -465,24 +465,24 @@ INSERT INTO `product` (`id`, `category_id`, `brand_id`, `name`, `slug`, `price`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `topic`
+-- Cấu trúc bảng cho bảng `topic`
 --
 
 CREATE TABLE `topic` (
-  `id` int UNSIGNED NOT NULL COMMENT 'Mã chủ đề',
-  `name` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL COMMENT 'Tên chủ đề',
-  `slug` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL COMMENT 'Slug tên chủ đề',
-  `sort_order` int UNSIGNED NOT NULL DEFAULT '1' COMMENT 'Sắp xếp',
-  `description` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL COMMENT 'Từ khóa SEO',
+  `id` int(10) UNSIGNED NOT NULL COMMENT 'Mã chủ đề',
+  `name` varchar(255) NOT NULL COMMENT 'Tên chủ đề',
+  `slug` varchar(255) NOT NULL COMMENT 'Slug tên chủ đề',
+  `sort_order` int(10) UNSIGNED NOT NULL DEFAULT 1 COMMENT 'Sắp xếp',
+  `description` varchar(255) NOT NULL COMMENT 'Từ khóa SEO',
   `created_at` datetime NOT NULL COMMENT 'Ngày tạo',
-  `created_by` tinyint UNSIGNED NOT NULL COMMENT 'Người tạo',
+  `created_by` tinyint(3) UNSIGNED NOT NULL COMMENT 'Người tạo',
   `updated_at` datetime DEFAULT NULL COMMENT 'Ngày sửa',
-  `updated_by` tinyint UNSIGNED DEFAULT NULL COMMENT 'Người sửa',
-  `status` tinyint UNSIGNED NOT NULL DEFAULT '2' COMMENT 'Trạng thái'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+  `updated_by` tinyint(3) UNSIGNED DEFAULT NULL COMMENT 'Người sửa',
+  `status` tinyint(3) UNSIGNED NOT NULL DEFAULT 2 COMMENT 'Trạng thái'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `topic`
+-- Đang đổ dữ liệu cho bảng `topic`
 --
 
 INSERT INTO `topic` (`id`, `name`, `slug`, `sort_order`, `description`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`) VALUES
@@ -494,29 +494,29 @@ INSERT INTO `topic` (`id`, `name`, `slug`, `sort_order`, `description`, `created
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Cấu trúc bảng cho bảng `user`
 --
 
 CREATE TABLE `user` (
-  `id` int UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `gender` tinyint UNSIGNED NOT NULL,
-  `phone` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `username` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `address` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL DEFAULT '0',
-  `image` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `roles` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL DEFAULT '0' COMMENT 'admin or customer',
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `gender` tinyint(3) UNSIGNED NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL DEFAULT '0',
+  `image` varchar(255) DEFAULT NULL,
+  `roles` varchar(50) NOT NULL DEFAULT '0' COMMENT 'admin or customer',
   `created_at` datetime NOT NULL,
-  `created_by` tinyint UNSIGNED NOT NULL,
+  `created_by` tinyint(3) UNSIGNED NOT NULL,
   `updated_at` datetime DEFAULT NULL,
-  `updated_by` tinyint UNSIGNED DEFAULT NULL,
-  `status` tinyint UNSIGNED NOT NULL DEFAULT '2'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+  `updated_by` tinyint(3) UNSIGNED DEFAULT NULL,
+  `status` tinyint(3) UNSIGNED NOT NULL DEFAULT 2
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `user`
+-- Đang đổ dữ liệu cho bảng `user`
 --
 
 INSERT INTO `user` (`id`, `name`, `email`, `gender`, `phone`, `username`, `password`, `address`, `image`, `roles`, `created_at`, `created_by`, `updated_at`, `updated_by`, `status`) VALUES
@@ -528,144 +528,144 @@ INSERT INTO `user` (`id`, `name`, `email`, `gender`, `phone`, `username`, `passw
 (27, 'Hội Nhà Văn', 'khanhduc392@gmail.com', 1, '0378173109', 'asd', '123', '8 Dương văn cam', NULL, 'admin', '2024-05-02 15:51:12', 1, '2024-05-02 15:51:12', NULL, 2);
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `banner`
+-- Chỉ mục cho bảng `banner`
 --
 ALTER TABLE `banner`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `brand`
+-- Chỉ mục cho bảng `brand`
 --
 ALTER TABLE `brand`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `category`
+-- Chỉ mục cho bảng `category`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `contact`
+-- Chỉ mục cho bảng `contact`
 --
 ALTER TABLE `contact`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `menu`
+-- Chỉ mục cho bảng `menu`
 --
 ALTER TABLE `menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `order`
+-- Chỉ mục cho bảng `order`
 --
 ALTER TABLE `order`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `orderdetail`
+-- Chỉ mục cho bảng `orderdetail`
 --
 ALTER TABLE `orderdetail`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `post`
+-- Chỉ mục cho bảng `post`
 --
 ALTER TABLE `post`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `product`
+-- Chỉ mục cho bảng `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `topic`
+-- Chỉ mục cho bảng `topic`
 --
 ALTER TABLE `topic`
   ADD PRIMARY KEY (`id`) USING BTREE;
 
 --
--- Indexes for table `user`
+-- Chỉ mục cho bảng `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `banner`
+-- AUTO_INCREMENT cho bảng `banner`
 --
 ALTER TABLE `banner`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
--- AUTO_INCREMENT for table `brand`
+-- AUTO_INCREMENT cho bảng `brand`
 --
 ALTER TABLE `brand`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
--- AUTO_INCREMENT for table `category`
+-- AUTO_INCREMENT cho bảng `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'AUTO_INCREMENT', AUTO_INCREMENT=20;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'AUTO_INCREMENT', AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT for table `contact`
+-- AUTO_INCREMENT cho bảng `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `menu`
+-- AUTO_INCREMENT cho bảng `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=421;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=421;
 
 --
--- AUTO_INCREMENT for table `order`
+-- AUTO_INCREMENT cho bảng `order`
 --
 ALTER TABLE `order`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
 
 --
--- AUTO_INCREMENT for table `orderdetail`
+-- AUTO_INCREMENT cho bảng `orderdetail`
 --
 ALTER TABLE `orderdetail`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
--- AUTO_INCREMENT for table `post`
+-- AUTO_INCREMENT cho bảng `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
--- AUTO_INCREMENT for table `product`
+-- AUTO_INCREMENT cho bảng `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
--- AUTO_INCREMENT for table `topic`
+-- AUTO_INCREMENT cho bảng `topic`
 --
 ALTER TABLE `topic`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Mã chủ đề', AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Mã chủ đề', AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
