@@ -8,5 +8,5 @@ router.post("/store", UserController.store);
 router.put("/edit/:id", UserController.edit);
 router.delete("/remove/:id", UserController.remove);
 
+router.post("/login", UserController.login);
 module.exports = router;
- 

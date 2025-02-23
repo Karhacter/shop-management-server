@@ -9,7 +9,7 @@ const PostRouter = require("./PostRouter");
 const TopicRouter = require("./TopicRouter");
 const UserRouter = require("./UserRouter");
 const CustomerRouter = require("./CustomerRouter");
-
+const CartRouter = require("./CartRouter");
 const router = (app) => {
   app.use("/api/category", CategoryRouter);
   app.use("/api/product", ProductRouter);
@@ -22,5 +22,6 @@ const router = (app) => {
   app.use("/api/user", UserRouter);
   app.use("/api/topic", TopicRouter);
   app.use("/api/customer", CustomerRouter);
+  app.use("/api/cart", CartRouter);
 };
 module.exports = router;

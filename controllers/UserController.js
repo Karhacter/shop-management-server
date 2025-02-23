@@ -129,6 +129,52 @@ const UserController = {
       return res.status(200).json(result);
     }
   },
+  login: async (req, res) => {
+    try {
+      const { email, password } = req.body; // Không cần lấy id, phone, username, address ở đây
+  
+      // Kiểm tra xem email và password có trống hay không
+      if (!email || !password) {
+        return res.status(400).json({
+          user: null,
+          status: false,
+          message: "Email and password cannot be empty",
+        });
+      }
+  
+      // Gọi hàm đăng nhập từ User
+      User.login({ email, password }, async (err, data) => {
+        if (err || !data) {
+          return res.status(401).json({
+            user: null,
+            status: false,
+            message: "Invalid email or password",
+          });
+        }
+  
+        // Trả về thông tin người dùng đã đăng nhập thành công
+        res.status(200).json({
+          user: {
+            id: data.id, // Giả sử data chứa thông tin người dùng đã đăng nhập
+            email: data.email,
+            username: data.username,
+            phone: data.phone,
+            address: data.address,
+          },
+          status: true,
+          message: "Login successful",
+        });
+      });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({
+        user: null,
+        status: false,
+        message: "Internal server error",
+      });
+    }
+  },
+  
 };
 
 module.exports = UserController;
